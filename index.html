@@ -2,20 +2,49 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
 
-  <title>Lê Mạnh VinFast - Tư vấn mua xe VinFast chính hãng</title>
+  <title>Lê Mạnh VinFast | Tư vấn mua xe VinFast chính hãng</title>
 
-  <meta name="description" content="Tư vấn mua xe VinFast chính hãng, báo giá lăn bánh, hỗ trợ trả góp, cập nhật ưu đãi VinFast mới nhất theo tháng.">
-  <meta name="keywords" content="VinFast, VF5, Limo Green, VF8, tư vấn VinFast, mua xe VinFast trả góp, báo giá VinFast">
+  <meta name="description" content="Lê Mạnh VinFast - Tư vấn mua xe VinFast chính hãng, báo giá lăn bánh, hỗ trợ trả góp, cập nhật ưu đãi VinFast mới nhất theo tháng.">
+  <meta name="keywords" content="Lê Mạnh VinFast, VinFast VF5, Limo Green, VF8, tư vấn mua xe VinFast, mua xe VinFast trả góp, báo giá VinFast">
   <meta name="author" content="Lê Mạnh VinFast">
 
+  <meta property="og:title" content="Lê Mạnh VinFast - Tư vấn mua xe VinFast chính hãng">
+  <meta property="og:description" content="Nhận báo giá lăn bánh, ưu đãi trả góp và chính sách VinFast mới nhất.">
+  <meta property="og:image" content="background.jpg">
+  <meta property="og:type" content="website">
+
   <style>
+    :root {
+      --bg: #050608;
+      --bg-soft: #101217;
+      --card: rgba(255, 255, 255, 0.095);
+      --card-strong: rgba(255, 255, 255, 0.145);
+      --line: rgba(255, 255, 255, 0.14);
+      --line-gold: rgba(255, 210, 105, 0.34);
+      --text: #ffffff;
+      --muted: rgba(255, 255, 255, 0.72);
+      --muted-2: rgba(255, 255, 255, 0.58);
+      --gold: #ffd36b;
+      --gold-2: #b97912;
+      --red: #e50914;
+      --red-dark: #650006;
+      --blue: #087bff;
+      --green: #0fc777;
+      --radius-xl: 30px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --shadow: 0 26px 70px rgba(0, 0, 0, 0.48);
+      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.28);
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
+      -webkit-tap-highlight-color: transparent;
     }
 
     html {
@@ -23,397 +52,701 @@
     }
 
     body {
-      background: #050505;
-      color: #fff;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top, rgba(255, 211, 107, 0.13), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(229, 9, 20, 0.18), transparent 34%),
+        var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
       overflow-x: hidden;
     }
 
+    body.no-scroll {
+      overflow: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
     a {
+      color: inherit;
       text-decoration: none;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font-family: inherit;
+    }
+
+    button {
+      cursor: pointer;
     }
 
     .screen {
       display: none;
       min-height: 100vh;
+      padding-bottom: 104px;
     }
 
     .screen.active {
       display: block;
     }
 
-    .home {
-      min-height: 100vh;
-      background:
-        linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.93)),
-        url("background.jpg");
-      background-size: cover;
-      background-position: center;
-      padding: 28px 16px 110px;
-      position: relative;
-    }
-
-    .home::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at top center, rgba(255, 211, 107, 0.22), transparent 35%),
-        radial-gradient(circle at bottom center, rgba(180, 0, 0, 0.25), transparent 42%),
-        linear-gradient(90deg, rgba(0,0,0,0.55), transparent 35%, rgba(0,0,0,0.55));
-      pointer-events: none;
-    }
-
     .container {
-      width: 100%;
-      max-width: 1180px;
-      margin: auto;
+      width: min(100% - 28px, 1120px);
+      margin: 0 auto;
       position: relative;
       z-index: 2;
     }
 
-    .hero {
-      max-width: 610px;
-      margin: auto;
+    /* ================= HERO ================= */
+
+    .home {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .home-hero {
+      position: relative;
+      min-height: 100svh;
+      padding: 18px 0 34px;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0.14), rgba(0,0,0,0.86)),
+        linear-gradient(90deg, rgba(0,0,0,0.72), rgba(0,0,0,0.18), rgba(0,0,0,0.72)),
+        url("background.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .home-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 50% 8%, rgba(255, 211, 107, 0.24), transparent 34%),
+        linear-gradient(180deg, transparent 42%, rgba(5,6,8,0.98) 100%);
+      pointer-events: none;
+    }
+
+    .top-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 8px 0 12px;
+    }
+
+    .brand-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.38);
+      border: 1px solid rgba(255,255,255,0.16);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .brand-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 18px rgba(15,199,119,0.8);
+    }
+
+    .brand-pill span {
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0.2px;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .header-call {
+      padding: 10px 13px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--red), var(--red-dark));
+      color: #fff;
+      font-size: 13px;
+      font-weight: 900;
+      box-shadow: 0 14px 30px rgba(229,9,20,0.22);
+      white-space: nowrap;
+    }
+
+    .hero-card {
+      width: min(100%, 620px);
+      margin: 18px auto 0;
       text-align: center;
-      padding-top: 30px;
+      padding: 22px 16px 0;
+    }
+
+    .avatar-wrap {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 17px;
+      position: relative;
+    }
+
+    .avatar-wrap::before {
+      content: "";
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(255,211,107,0.9), rgba(255,255,255,0.15), rgba(229,9,20,0.65));
+      filter: blur(1px);
     }
 
     .avatar {
-      width: 122px;
-      height: 122px;
+      position: relative;
+      z-index: 2;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid rgba(255,255,255,0.88);
-      box-shadow:
-        0 0 0 8px rgba(255,255,255,0.08),
-        0 0 45px rgba(255, 207, 96, 0.48);
-      background: #111;
-      margin-bottom: 24px;
+      border: 3px solid rgba(255,255,255,0.9);
+      background: #171717;
+      box-shadow: 0 22px 56px rgba(0,0,0,0.62);
     }
 
-    .badge {
-      display: inline-block;
-      padding: 9px 16px;
+    .label-gold {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 9px 14px;
       border-radius: 999px;
-      color: #ffd36b;
-      background: rgba(255, 211, 107, 0.13);
-      border: 1px solid rgba(255, 211, 107, 0.32);
-      font-weight: 700;
-      margin-bottom: 16px;
+      background: rgba(255, 211, 107, 0.12);
+      border: 1px solid var(--line-gold);
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 900;
+      margin-bottom: 13px;
     }
 
     h1 {
-      font-size: 46px;
-      line-height: 1.1;
-      font-weight: 900;
-      margin-bottom: 14px;
-      text-shadow: 0 8px 28px rgba(0,0,0,0.8);
-      letter-spacing: -1px;
+      font-size: clamp(34px, 9vw, 58px);
+      line-height: 1.03;
+      letter-spacing: -1.6px;
+      font-weight: 1000;
+      margin-bottom: 12px;
+      text-shadow: 0 10px 32px rgba(0,0,0,0.9);
     }
 
     .hero-desc {
       color: rgba(255,255,255,0.82);
-      font-size: 17px;
-      line-height: 1.7;
-      margin-bottom: 26px;
-      text-shadow: 0 5px 18px rgba(0,0,0,0.75);
+      font-size: 15.5px;
+      line-height: 1.65;
+      max-width: 540px;
+      margin: 0 auto 18px;
+      text-shadow: 0 8px 20px rgba(0,0,0,0.9);
     }
 
+    .highlight-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin: 18px auto;
+    }
+
+    .highlight-item {
+      min-height: 72px;
+      padding: 12px 8px;
+      border-radius: 18px;
+      background: rgba(0,0,0,0.48);
+      border: 1px solid rgba(255,255,255,0.14);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .highlight-item strong {
+      display: block;
+      color: var(--gold);
+      font-size: 18px;
+      line-height: 1;
+      margin-bottom: 7px;
+    }
+
+    .highlight-item span {
+      display: block;
+      color: rgba(255,255,255,0.72);
+      font-size: 11.5px;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    /* ================= CONTACT ================= */
+
     .contact-card {
+      margin-top: 16px;
+      padding: 14px;
+      border-radius: var(--radius-xl);
       background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      box-shadow: var(--shadow);
       backdrop-filter: blur(22px);
       -webkit-backdrop-filter: blur(22px);
-      border: 1px solid rgba(255,255,255,0.28);
-      border-radius: 30px;
-      padding: 22px;
-      box-shadow:
-        0 35px 95px rgba(0,0,0,0.65),
-        inset 0 1px 0 rgba(255,255,255,0.16);
-      margin-bottom: 22px;
+    }
+
+    .main-actions {
+      display: grid;
+      gap: 11px;
     }
 
     .big-btn {
+      min-height: 64px;
+      border-radius: 21px;
+      padding: 13px 16px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      min-height: 68px;
-      border-radius: 19px;
-      padding: 0 24px;
-      margin-bottom: 14px;
-      color: white;
-      font-size: 21px;
-      font-weight: 900;
-      border: 1px solid rgba(255,255,255,0.45);
-      box-shadow:
-        inset 0 1px 8px rgba(255,255,255,0.20),
-        0 12px 28px rgba(0,0,0,0.28);
-      transition: 0.25s;
-      cursor: pointer;
+      gap: 14px;
+      border: 1px solid rgba(255,255,255,0.22);
+      color: #fff;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 14px 30px rgba(0,0,0,0.25);
+      transition: transform 0.2s ease, filter 0.2s ease;
     }
 
-    .big-btn:last-child {
-      margin-bottom: 0;
+    .big-btn:active {
+      transform: scale(0.985);
+      filter: brightness(1.08);
     }
 
-    .big-btn:hover {
-      transform: translateY(-3px);
-      box-shadow:
-        inset 0 1px 8px rgba(255,255,255,0.25),
-        0 20px 42px rgba(0,0,0,0.45);
+    .big-btn strong {
+      display: block;
+      font-size: 17px;
+      line-height: 1.15;
+      font-weight: 1000;
+      text-align: left;
     }
 
     .big-btn small {
       display: block;
+      color: rgba(255,255,255,0.75);
       font-size: 12px;
-      color: rgba(255,255,255,0.72);
-      font-weight: 600;
-      margin-top: 3px;
+      line-height: 1.25;
+      margin-top: 5px;
+      text-align: left;
+      font-weight: 700;
     }
 
-    .icon {
-      font-size: 28px;
+    .btn-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,0.14);
+      font-size: 22px;
+      flex: 0 0 auto;
     }
 
-    .call {
-      background: linear-gradient(135deg, #f00000, #8d0000 60%, #2a0000);
+    .call-btn {
+      background: linear-gradient(135deg, #ff1b1b, #9f0008 60%, #330003);
     }
 
-    .zalo {
+    .zalo-btn {
       background: linear-gradient(135deg, #0068ff, #00a2ff);
     }
 
-    .product {
-      background: linear-gradient(135deg, #f0c45a, #9b6508 60%, #402400);
+    .product-btn {
+      background: linear-gradient(135deg, #ffd36b, #b97912 62%, #4c2d05);
+      color: #161006;
     }
 
-    .facebook,
-    .fanpage {
-      background: linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.06));
+    .product-btn small,
+    .product-btn strong {
+      color: #161006;
     }
 
-    .mini-row {
+    .product-btn .btn-icon {
+      background: rgba(0,0,0,0.13);
+    }
+
+    .mini-links {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 11px;
-      margin-bottom: 22px;
+      gap: 9px;
+      margin-top: 11px;
     }
 
-    .mini-btn {
-      padding: 13px 10px;
+    .mini-link {
+      min-height: 45px;
       border-radius: 16px;
-      background: rgba(0,0,0,0.42);
-      border: 1px solid rgba(255,255,255,0.22);
-      color: white;
-      font-weight: 800;
-      font-size: 14px;
-      transition: 0.25s;
-    }
-
-    .mini-btn:hover {
-      background: rgba(255,255,255,0.15);
-      transform: translateY(-2px);
-    }
-
-    .section-box {
-      background: rgba(0,0,0,0.63);
-      border: 1px solid rgba(255, 211, 107, 0.42);
-      border-radius: 28px;
-      padding: 26px;
-      margin-top: 22px;
-      text-align: left;
-      box-shadow: 0 24px 70px rgba(0,0,0,0.52);
-    }
-
-    .section-box h2 {
-      color: #ffd36b;
-      text-align: center;
-      font-size: 30px;
-      margin-bottom: 18px;
-    }
-
-    .section-box ul {
-      padding-left: 21px;
-      line-height: 1.9;
+      background: rgba(0,0,0,0.32);
+      border: 1px solid rgba(255,255,255,0.14);
       color: rgba(255,255,255,0.92);
-      font-size: 16px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 900;
     }
 
-    .address {
-      margin-top: 18px;
-      padding: 16px;
+    /* ================= SECTIONS ================= */
+
+    .section {
+      padding: 20px 0 0;
+    }
+
+    .section-card {
+      padding: 20px;
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.06));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 16px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .section-card::before {
+      content: "";
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      top: -95px;
+      right: -95px;
+      background: rgba(255, 211, 107, 0.12);
+      pointer-events: none;
+    }
+
+    .section-title {
+      position: relative;
+      z-index: 2;
+      margin-bottom: 15px;
+    }
+
+    .section-title .eyebrow {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 1000;
+      margin-bottom: 7px;
+    }
+
+    .section-title h2 {
+      font-size: 25px;
+      line-height: 1.14;
+      letter-spacing: -0.7px;
+    }
+
+    .section-title p {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+
+    .policy-list {
+      display: grid;
+      gap: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .policy-item {
+      display: flex;
+      gap: 11px;
+      padding: 13px;
       border-radius: 18px;
-      background: rgba(255,255,255,0.09);
-      border: 1px solid rgba(255,255,255,0.18);
-      color: rgba(255,255,255,0.9);
-      line-height: 1.65;
+      background: rgba(0,0,0,0.28);
+      border: 1px solid rgba(255,255,255,0.1);
     }
 
-    .address strong {
-      color: #ffd36b;
+    .check {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 211, 107, 0.16);
+      color: var(--gold);
+      font-weight: 1000;
+      flex: 0 0 auto;
+    }
+
+    .policy-item strong {
+      display: block;
+      font-size: 14.5px;
+      margin-bottom: 3px;
+    }
+
+    .policy-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 13.5px;
+      line-height: 1.45;
+    }
+
+    .address-box {
+      position: relative;
+      z-index: 2;
+      margin-top: 14px;
+      padding: 15px;
+      border-radius: 20px;
+      background: rgba(255, 211, 107, 0.1);
+      border: 1px solid var(--line-gold);
+      line-height: 1.55;
+      color: rgba(255,255,255,0.88);
+      font-size: 14px;
+    }
+
+    .address-box strong {
+      color: var(--gold);
     }
 
     .quick-products {
+      position: relative;
+      z-index: 2;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      margin-top: 22px;
+      grid-template-columns: 1fr;
+      gap: 12px;
     }
 
     .quick-card {
-      background: rgba(255,255,255,0.09);
-      border: 1px solid rgba(255,255,255,0.16);
-      border-radius: 20px;
-      padding: 16px;
-      text-align: center;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding: 13px;
+      border-radius: 21px;
+      background: rgba(0,0,0,0.28);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .quick-thumb {
+      width: 82px;
+      height: 62px;
+      border-radius: 17px;
+      object-fit: cover;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.04));
+      border: 1px solid rgba(255,255,255,0.1);
+      flex: 0 0 auto;
     }
 
     .quick-card strong {
       display: block;
-      color: #ffd36b;
-      margin-bottom: 6px;
       font-size: 17px;
+      margin-bottom: 4px;
+      color: var(--gold);
     }
 
     .quick-card p {
-      font-size: 13px;
-      color: rgba(255,255,255,0.72);
-      line-height: 1.5;
+      color: var(--muted);
+      font-size: 13.5px;
+      line-height: 1.45;
     }
 
-    .lead-form {
+    .full-btn {
+      width: 100%;
+      border: 0;
+      margin-top: 14px;
+      min-height: 54px;
+      border-radius: 18px;
+      font-weight: 1000;
+      font-size: 15px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-2));
+      color: #140d03;
+      box-shadow: 0 16px 35px rgba(255, 211, 107, 0.14);
+    }
+
+    .trust-grid {
+      position: relative;
+      z-index: 2;
       display: grid;
-      gap: 12px;
-      margin-top: 18px;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .trust-item {
+      min-height: 92px;
+      padding: 14px 12px;
+      border-radius: 20px;
+      background: rgba(0,0,0,0.28);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .trust-item b {
+      display: block;
+      color: var(--gold);
+      font-size: 20px;
+      margin-bottom: 7px;
+    }
+
+    .trust-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    /* ================= FORM ================= */
+
+    .lead-form {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      gap: 11px;
+    }
+
+    .form-group {
+      display: grid;
+      gap: 6px;
+    }
+
+    .form-group label {
+      color: rgba(255,255,255,0.78);
+      font-size: 13px;
+      font-weight: 900;
     }
 
     .lead-form input,
     .lead-form select {
       width: 100%;
-      border: 1px solid rgba(255,255,255,0.22);
-      background: rgba(255,255,255,0.1);
-      color: white;
-      border-radius: 16px;
-      padding: 15px;
-      font-size: 15px;
+      min-height: 54px;
+      border-radius: 18px;
+      padding: 0 15px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(0,0,0,0.32);
+      color: #fff;
       outline: none;
+      font-size: 15px;
+      font-weight: 700;
     }
 
     .lead-form input::placeholder {
-      color: rgba(255,255,255,0.62);
+      color: rgba(255,255,255,0.42);
     }
 
     .lead-form select option {
       color: #111;
+      background: #fff;
     }
 
-    .submit-btn {
-      border: none;
-      padding: 16px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, #f0c45a, #9b6508);
-      color: #111;
-      font-weight: 900;
-      font-size: 16px;
-      cursor: pointer;
-      transition: 0.25s;
-    }
-
-    .submit-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 35px rgba(0,0,0,0.35);
-    }
-
-    .trust-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .trust-item {
-      background: rgba(255,255,255,0.09);
-      border: 1px solid rgba(255,255,255,0.14);
-      border-radius: 18px;
-      padding: 15px;
-      color: rgba(255,255,255,0.88);
+    .form-note {
+      color: var(--muted-2);
+      font-size: 12.5px;
       line-height: 1.5;
-      font-size: 14px;
-    }
-
-    .products-page {
-      min-height: 100vh;
-      background:
-        radial-gradient(circle at top left, rgba(255, 211, 107, 0.18), transparent 34%),
-        radial-gradient(circle at bottom right, rgba(170, 0, 0, 0.20), transparent 36%),
-        linear-gradient(135deg, #030303, #121212 55%, #030303);
-      padding: 26px 16px 110px;
-    }
-
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 30px;
-      max-width: 1180px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .back-btn {
-      border: 1px solid rgba(255,255,255,0.25);
-      background: rgba(255,255,255,0.10);
-      color: white;
-      border-radius: 15px;
-      padding: 13px 18px;
-      font-weight: 900;
-      cursor: pointer;
-      transition: 0.25s;
-    }
-
-    .back-btn:hover {
-      background: rgba(255,255,255,0.18);
-      transform: translateY(-2px);
-    }
-
-    .brand-small {
-      color: #ffd36b;
-      font-weight: 900;
-    }
-
-    .page-title {
-      max-width: 760px;
-      margin: 0 auto 34px;
       text-align: center;
     }
 
-    .page-title h2 {
-      font-size: 42px;
+    .submit-btn {
+      width: 100%;
+      min-height: 56px;
+      border-radius: 18px;
+      border: 0;
+      background: linear-gradient(135deg, #ff1f1f, #8b0007);
+      color: #fff;
+      font-size: 15.5px;
+      font-weight: 1000;
+      box-shadow: 0 16px 34px rgba(229,9,20,0.22);
+    }
+
+    /* ================= PRODUCTS PAGE ================= */
+
+    .products-page {
+      padding-top: 14px;
+      background:
+        radial-gradient(circle at top left, rgba(255, 211, 107, 0.15), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(229, 9, 20, 0.16), transparent 35%),
+        linear-gradient(135deg, #050608, #12151d 50%, #050608);
+    }
+
+    .product-topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 10px 0;
+      background: linear-gradient(180deg, rgba(5,6,8,0.96), rgba(5,6,8,0.68));
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .topbar-inner {
+      width: min(100% - 28px, 1120px);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .back-btn {
+      min-height: 44px;
+      padding: 0 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.09);
+      color: #fff;
+      font-weight: 1000;
+    }
+
+    .topbar-title {
+      text-align: right;
+    }
+
+    .topbar-title strong {
+      display: block;
+      font-size: 14px;
+      color: var(--gold);
+    }
+
+    .topbar-title span {
+      display: block;
+      margin-top: 2px;
+      font-size: 12px;
+      color: var(--muted-2);
+      font-weight: 700;
+    }
+
+    .product-head {
+      width: min(100% - 28px, 760px);
+      margin: 18px auto 18px;
+      text-align: center;
+    }
+
+    .product-head h2 {
+      font-size: clamp(31px, 8vw, 48px);
+      line-height: 1.05;
+      letter-spacing: -1.3px;
       margin-bottom: 10px;
     }
 
-    .page-title p {
-      color: rgba(255,255,255,0.72);
-      line-height: 1.7;
-      font-size: 17px;
+    .product-head p {
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 15px;
     }
 
     .product-grid {
-      max-width: 1180px;
-      margin: auto;
+      width: min(100% - 28px, 1120px);
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      grid-template-columns: 1fr;
+      gap: 15px;
     }
 
     .car-card {
-      background: rgba(255,255,255,0.09);
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: 30px;
-      padding: 22px;
-      box-shadow: 0 26px 75px rgba(0,0,0,0.48);
-      transition: 0.25s;
-      overflow: hidden;
       position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      padding: 14px;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.13), rgba(255,255,255,0.06));
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: var(--shadow-soft);
     }
 
     .car-card::before {
@@ -422,112 +755,124 @@
       width: 170px;
       height: 170px;
       border-radius: 50%;
-      background: rgba(255, 211, 107, 0.13);
-      top: -75px;
-      right: -75px;
+      right: -80px;
+      top: -80px;
+      background: rgba(255, 211, 107, 0.12);
+      pointer-events: none;
     }
 
-    .car-card:hover {
-      transform: translateY(-8px);
-      background: rgba(255,255,255,0.13);
-    }
-
-    .car-photo {
+    .car-img {
       width: 100%;
-      height: 170px;
+      aspect-ratio: 16 / 9;
       object-fit: cover;
-      border-radius: 23px;
-      margin-bottom: 18px;
-      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 22px;
       background:
-        linear-gradient(135deg, rgba(255,255,255,0.22), rgba(255,255,255,0.05));
+        linear-gradient(135deg, rgba(255,255,255,0.22), rgba(255,255,255,0.04));
+      border: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 14px;
       position: relative;
       z-index: 2;
+    }
+
+    .car-body {
+      position: relative;
+      z-index: 2;
+    }
+
+    .car-tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 0 11px;
+      border-radius: 999px;
+      background: rgba(255, 211, 107, 0.12);
+      border: 1px solid var(--line-gold);
+      color: var(--gold);
+      font-size: 12.5px;
+      font-weight: 1000;
+      margin-bottom: 9px;
     }
 
     .car-card h3 {
-      font-size: 27px;
-      margin-bottom: 10px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .tag {
-      display: inline-block;
-      padding: 7px 11px;
-      border-radius: 999px;
-      color: #ffd36b;
-      background: rgba(255, 211, 107, 0.12);
-      border: 1px solid rgba(255, 211, 107, 0.24);
-      font-size: 13px;
-      font-weight: 800;
-      margin-bottom: 13px;
-      position: relative;
-      z-index: 2;
+      font-size: 26px;
+      line-height: 1.1;
+      margin-bottom: 8px;
+      letter-spacing: -0.4px;
     }
 
     .car-card p {
-      color: rgba(255,255,255,0.78);
-      line-height: 1.65;
-      margin-bottom: 16px;
-      position: relative;
-      z-index: 2;
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height: 1.55;
+      margin-bottom: 12px;
     }
 
-    .price {
-      color: #ffd36b;
-      font-size: 19px;
-      font-weight: 900;
-      margin-bottom: 16px;
+    .car-price {
+      color: var(--gold);
+      font-size: 18px;
+      font-weight: 1000;
+      margin-bottom: 12px;
+    }
+
+    .car-points {
+      display: grid;
+      gap: 7px;
+      margin-bottom: 13px;
+    }
+
+    .car-points span {
+      color: rgba(255,255,255,0.82);
+      font-size: 13.5px;
+      line-height: 1.35;
+      padding-left: 18px;
       position: relative;
-      z-index: 2;
+    }
+
+    .car-points span::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 1000;
     }
 
     .card-actions {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
-      position: relative;
-      z-index: 2;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
     }
 
-    .detail-btn,
-    .price-btn {
-      width: 100%;
-      border: none;
-      padding: 15px;
+    .card-actions button,
+    .card-actions a {
+      min-height: 48px;
       border-radius: 16px;
-      font-weight: 900;
-      cursor: pointer;
-      font-size: 15px;
-      transition: 0.25s;
+      border: 0;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      font-size: 13.5px;
+      font-weight: 1000;
     }
 
     .detail-btn {
-      background: linear-gradient(135deg, #f0c45a, #8c5a05);
-      color: #111;
+      background: linear-gradient(135deg, var(--gold), var(--gold-2));
+      color: #140d03;
     }
 
     .price-btn {
-      background: linear-gradient(135deg, #e60000, #650000);
-      color: white;
-    }
-
-    .detail-btn:hover,
-    .price-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 28px rgba(0,0,0,0.35);
+      background: linear-gradient(135deg, var(--red), var(--red-dark));
+      color: #fff;
     }
 
     .detail-box {
+      width: min(100% - 28px, 1120px);
+      margin: 16px auto 0;
       display: none;
-      max-width: 1180px;
-      margin: 30px auto 0;
-      background: rgba(255,255,255,0.09);
-      border: 1px solid rgba(255,255,255,0.18);
       border-radius: 28px;
-      padding: 28px;
-      box-shadow: 0 26px 75px rgba(0,0,0,0.45);
+      padding: 18px;
+      background: rgba(255,255,255,0.105);
+      border: 1px solid rgba(255,255,255,0.16);
+      box-shadow: var(--shadow-soft);
     }
 
     .detail-box.active {
@@ -535,130 +880,226 @@
     }
 
     .detail-box h3 {
-      font-size: 31px;
-      color: #ffd36b;
-      margin-bottom: 14px;
+      color: var(--gold);
+      font-size: 25px;
+      margin-bottom: 11px;
     }
 
     .detail-box ul {
-      padding-left: 22px;
-      line-height: 2;
-      color: rgba(255,255,255,0.9);
-      margin-bottom: 20px;
+      padding-left: 18px;
+      color: rgba(255,255,255,0.86);
+      line-height: 1.75;
+      font-size: 14.5px;
+      margin-bottom: 14px;
     }
 
-    .bottom-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
+    .detail-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
     }
 
-    .bottom-call,
-    .bottom-zalo {
-      display: inline-block;
-      color: white;
-      padding: 15px 24px;
-      border-radius: 16px;
-      font-weight: 900;
+    .detail-actions a {
+      min-height: 50px;
+      border-radius: 17px;
+      display: grid;
+      place-items: center;
+      font-weight: 1000;
+      font-size: 14px;
     }
 
-    .bottom-call {
-      background: linear-gradient(135deg, #e60000, #650000);
+    .detail-call {
+      background: linear-gradient(135deg, var(--red), var(--red-dark));
     }
 
-    .bottom-zalo {
-      background: linear-gradient(135deg, #0068ff, #00a2ff);
+    .detail-zalo {
+      background: linear-gradient(135deg, var(--blue), #00a2ff);
     }
+
+    /* ================= STICKY BAR ================= */
 
     .sticky-contact {
       position: fixed;
-      left: 12px;
-      right: 12px;
-      bottom: 12px;
-      z-index: 99;
-      max-width: 650px;
-      margin: auto;
+      left: 10px;
+      right: 10px;
+      bottom: calc(10px + var(--safe-bottom));
+      z-index: 100;
+      max-width: 660px;
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 1fr 1.2fr;
+      grid-template-columns: 1fr 1fr 1.12fr;
       gap: 8px;
-      background: rgba(0,0,0,0.68);
-      border: 1px solid rgba(255,255,255,0.16);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
+      padding: 8px;
       border-radius: 22px;
-      padding: 9px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.55);
+      background: rgba(4, 5, 7, 0.82);
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 22px 60px rgba(0,0,0,0.62);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
     }
 
     .sticky-contact a,
     .sticky-contact button {
-      border: none;
+      min-height: 47px;
       border-radius: 16px;
-      padding: 13px 8px;
-      color: white;
-      font-weight: 900;
-      font-size: 13px;
+      border: 0;
+      color: #fff;
+      font-size: 13.5px;
+      font-weight: 1000;
+      display: grid;
+      place-items: center;
       text-align: center;
-      cursor: pointer;
     }
 
     .sticky-call {
-      background: linear-gradient(135deg, #e60000, #650000);
+      background: linear-gradient(135deg, var(--red), var(--red-dark));
     }
 
     .sticky-zalo {
-      background: linear-gradient(135deg, #0068ff, #00a2ff);
+      background: linear-gradient(135deg, var(--blue), #00a2ff);
     }
 
     .sticky-product {
-      background: linear-gradient(135deg, #f0c45a, #8c5a05);
-      color: #111 !important;
+      background: linear-gradient(135deg, var(--gold), var(--gold-2));
+      color: #140d03 !important;
     }
 
-    @media (max-width: 900px) {
-      h1 {
-        font-size: 38px;
+    /* ================= FLOAT PHONE ================= */
+
+    .float-phone {
+      position: fixed;
+      right: 16px;
+      bottom: calc(86px + var(--safe-bottom));
+      z-index: 99;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #ff1f1f, #8b0007);
+      color: #fff;
+      font-size: 23px;
+      box-shadow: 0 16px 38px rgba(229,9,20,0.35);
+      animation: ring 1.7s infinite;
+    }
+
+    @keyframes ring {
+      0%, 100% { transform: rotate(0deg) scale(1); }
+      10% { transform: rotate(-9deg) scale(1.04); }
+      20% { transform: rotate(9deg) scale(1.04); }
+      30% { transform: rotate(-6deg) scale(1.02); }
+      40% { transform: rotate(6deg) scale(1.02); }
+      50% { transform: rotate(0deg) scale(1); }
+    }
+
+    /* ================= DESKTOP ================= */
+
+    @media (min-width: 768px) {
+      .home-hero {
+        padding-top: 24px;
       }
 
-      .hero {
-        padding-top: 22px;
+      .hero-card {
+        padding-top: 38px;
       }
 
       .contact-card {
         padding: 18px;
-        border-radius: 25px;
       }
 
-      .big-btn {
-        min-height: 64px;
-        font-size: 19px;
-        padding: 0 20px;
-      }
-
-      .mini-row {
+      .main-actions {
         grid-template-columns: 1fr;
       }
 
-      .quick-products,
-      .trust-grid,
+      .section {
+        padding-top: 26px;
+      }
+
+      .section-card {
+        padding: 28px;
+      }
+
+      .quick-products {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .quick-card {
+        display: block;
+      }
+
+      .quick-thumb {
+        width: 100%;
+        height: 120px;
+        margin-bottom: 12px;
+      }
+
+      .policy-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
       .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+
+      .car-card {
+        padding: 18px;
+      }
+
+      .sticky-contact {
+        display: none;
+      }
+
+      .float-phone {
+        bottom: 22px;
+      }
+
+      .screen {
+        padding-bottom: 34px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-card {
+        margin-top: 26px;
+      }
+
+      .section-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 18px;
+        align-items: start;
+      }
+
+      .section-card {
+        margin-bottom: 18px;
+      }
+    }
+
+    @media (max-width: 370px) {
+      .container,
+      .product-grid,
+      .product-head,
+      .detail-box,
+      .topbar-inner {
+        width: min(100% - 20px, 1120px);
+      }
+
+      .highlight-strip {
         grid-template-columns: 1fr;
       }
 
-      .section-box {
-        padding: 22px;
+      .mini-links {
+        grid-template-columns: 1fr;
       }
 
-      .section-box h2 {
-        font-size: 26px;
+      .trust-grid {
+        grid-template-columns: 1fr;
       }
 
-      .page-title h2 {
-        font-size: 34px;
-      }
-
-      .topbar {
-        gap: 14px;
+      .card-actions,
+      .detail-actions {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -667,315 +1108,474 @@
 <body>
 
   <!-- TRANG CHÍNH -->
-  <section id="home" class="screen active home">
-    <div class="container">
+  <main id="home" class="screen active home">
 
-      <div class="hero">
-        <img src="avatar.jpg" class="avatar" alt="Lê Mạnh VinFast">
+    <section class="home-hero">
+      <div class="container">
 
-        <div class="badge">Tư vấn VinFast chính hãng</div>
-
-        <h1>Lê Mạnh VinFast</h1>
-
-        <p class="hero-desc">
-          Nhận báo giá lăn bánh, ưu đãi trả góp và chính sách VinFast mới nhất trong tháng.
-          Hỗ trợ khách hàng mua xe gia đình, chạy dịch vụ và kinh doanh hợp đồng.
-        </p>
-
-        <div class="contact-card">
-
-          <a class="big-btn call" href="tel:0357893451">
-            <span>
-              Gọi ngay nhận báo giá
-              <small>Tư vấn nhanh, rõ ràng, minh bạch</small>
-            </span>
-            <span class="icon">☎</span>
-          </a>
-
-          <a class="big-btn zalo" href="https://zalo.me/0357893451" target="_blank">
-            <span>
-              Nhắn Zalo tư vấn nhanh
-              <small>Gửi mẫu xe quan tâm để nhận giá</small>
-            </span>
-            <span class="icon">Z</span>
-          </a>
-
-          <a class="big-btn product" href="#" onclick="openProducts(); return false;">
-            <span>
-              Xem sản phẩm VinFast
-              <small>VF 5 · Limo Green · VF 8</small>
-            </span>
-            <span class="icon">🚘</span>
-          </a>
-
-        </div>
-
-        <div class="mini-row">
-          <a class="mini-btn" href="https://www.facebook.com/le.manh.28202/?locale=vi_VN" target="_blank">Facebook</a>
-          <a class="mini-btn" href="https://www.facebook.com/lemanh.vinfast.mydinh/" target="_blank">Fanpage</a>
-          <a class="mini-btn" href="sms:0357893451">Nhắn tin SMS</a>
-        </div>
-      </div>
-
-      <div class="section-box">
-        <h2>🔥 Ưu đãi VinFast tháng này</h2>
-
-        <ul>
-          <li>Hỗ trợ tư vấn trả góp lên đến 85% giá trị xe.</li>
-          <li>Cập nhật chính sách ưu đãi mới nhất theo từng mẫu xe.</li>
-          <li>Báo giá lăn bánh nhanh theo tỉnh/thành.</li>
-          <li>Tư vấn phương án tài chính phù hợp với nhu cầu thực tế.</li>
-          <li>Hỗ trợ khách mua xe gia đình, chạy dịch vụ, hợp đồng, sân bay.</li>
-        </ul>
-
-        <div class="address">
-          <strong>📍 Địa chỉ:</strong><br>
-          Toà CT5 MHDI Đường Lê Đức Thọ, Phường Từ Liêm, Hà Nội
-        </div>
-      </div>
-
-      <div class="section-box">
-        <h2>🚘 Sản phẩm nổi bật</h2>
-
-        <div class="quick-products">
-          <div class="quick-card">
-            <strong>VF 5</strong>
-            <p>Phù hợp đi phố, gia đình nhỏ, mua xe lần đầu.</p>
+        <header class="top-header">
+          <div class="brand-pill">
+            <i class="brand-dot"></i>
+            <span>VinFast chính hãng</span>
           </div>
 
-          <div class="quick-card">
-            <strong>Limo Green</strong>
-            <p>Phù hợp chạy dịch vụ, hợp đồng, sân bay.</p>
+          <a class="header-call" href="tel:0357893451">Gọi 0357.893.451</a>
+        </header>
+
+        <div class="hero-card">
+          <div class="avatar-wrap">
+            <img src="avatar.jpg" class="avatar" alt="Lê Mạnh VinFast">
           </div>
 
-          <div class="quick-card">
-            <strong>VF 8</strong>
-            <p>SUV điện rộng rãi, sang trọng, phù hợp gia đình.</p>
+          <div class="label-gold">🚘 Tư vấn bán hàng VinFast</div>
+
+          <h1>Lê Mạnh VinFast</h1>
+
+          <p class="hero-desc">
+            Hỗ trợ báo giá lăn bánh, tư vấn trả góp, chọn xe theo nhu cầu gia đình,
+            chạy dịch vụ, hợp đồng, sân bay và cập nhật ưu đãi mới nhất trong tháng.
+          </p>
+
+          <div class="highlight-strip">
+            <div class="highlight-item">
+              <strong>85%</strong>
+              <span>Hỗ trợ trả góp</span>
+            </div>
+
+            <div class="highlight-item">
+              <strong>24/7</strong>
+              <span>Tư vấn nhanh</span>
+            </div>
+
+            <div class="highlight-item">
+              <strong>VIN</strong>
+              <span>Chính hãng</span>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="main-actions">
+
+              <a class="big-btn call-btn" href="tel:0357893451">
+                <span>
+                  <strong>Gọi ngay nhận báo giá</strong>
+                  <small>Báo giá nhanh, rõ ràng, dễ hiểu</small>
+                </span>
+                <span class="btn-icon">☎</span>
+              </a>
+
+              <a class="big-btn zalo-btn" href="https://zalo.me/0357893451" target="_blank" rel="noopener">
+                <span>
+                  <strong>Nhắn Zalo tư vấn nhanh</strong>
+                  <small>Gửi mẫu xe quan tâm để nhận giá</small>
+                </span>
+                <span class="btn-icon">Z</span>
+              </a>
+
+              <button class="big-btn product-btn" onclick="openProducts()">
+                <span>
+                  <strong>Xem sản phẩm VinFast</strong>
+                  <small>VF 5 · Limo Green · VF 8</small>
+                </span>
+                <span class="btn-icon">🚘</span>
+              </button>
+
+            </div>
+
+            <div class="mini-links">
+              <a class="mini-link" href="https://www.facebook.com/le.manh.28202/?locale=vi_VN" target="_blank" rel="noopener">Facebook</a>
+              <a class="mini-link" href="https://www.facebook.com/lemanh.vinfast.mydinh/" target="_blank" rel="noopener">Fanpage</a>
+              <a class="mini-link" href="sms:0357893451">SMS</a>
+            </div>
           </div>
         </div>
 
-        <br>
-
-        <button class="submit-btn" onclick="openProducts()">Xem tất cả sản phẩm</button>
       </div>
+    </section>
 
-      <div class="section-box" id="leadFormBox">
-        <h2>📩 Nhận báo giá nhanh</h2>
+    <section class="section">
+      <div class="container section-grid">
 
-        <form class="lead-form" onsubmit="sendLead(event)">
-          <input id="name" type="text" placeholder="Họ và tên của bạn" required>
-          <input id="phone" type="tel" placeholder="Số điện thoại" required>
+        <div>
+          <section class="section-card">
+            <div class="section-title">
+              <div class="eyebrow">ƯU ĐÃI THÁNG NÀY</div>
+              <h2>Chính sách tốt cho khách mua VinFast</h2>
+              <p>
+                Tư vấn phương án mua xe phù hợp tài chính, nhu cầu sử dụng và khu vực đăng ký.
+              </p>
+            </div>
 
-          <select id="car" required>
-            <option value="">Chọn mẫu xe quan tâm</option>
-            <option value="VinFast VF 5">VinFast VF 5</option>
-            <option value="VinFast Limo Green">VinFast Limo Green</option>
-            <option value="VinFast VF 8">VinFast VF 8</option>
-            <option value="Mẫu xe khác">Mẫu xe khác</option>
-          </select>
+            <div class="policy-list">
+              <div class="policy-item">
+                <div class="check">✓</div>
+                <div>
+                  <strong>Hỗ trợ trả góp lên đến 85%</strong>
+                  <span>Tư vấn hồ sơ, dòng tiền và phương án trả trước phù hợp.</span>
+                </div>
+              </div>
 
-          <input id="area" type="text" placeholder="Khu vực của bạn, ví dụ: Hà Nội">
+              <div class="policy-item">
+                <div class="check">✓</div>
+                <div>
+                  <strong>Cập nhật ưu đãi mới nhất</strong>
+                  <span>Thông tin chính sách theo từng mẫu xe và từng thời điểm.</span>
+                </div>
+              </div>
 
-          <button class="submit-btn" type="submit">
-            Nhận báo giá lăn bánh trong 5 phút
-          </button>
-        </form>
-      </div>
+              <div class="policy-item">
+                <div class="check">✓</div>
+                <div>
+                  <strong>Báo giá lăn bánh nhanh</strong>
+                  <span>Tính giá theo khu vực, biển số và nhu cầu mua xe thực tế.</span>
+                </div>
+              </div>
 
-      <div class="section-box">
-        <h2>✅ Vì sao nên liên hệ tôi?</h2>
+              <div class="policy-item">
+                <div class="check">✓</div>
+                <div>
+                  <strong>Hỗ trợ chọn xe đúng nhu cầu</strong>
+                  <span>Xe gia đình, đi phố, chạy dịch vụ, hợp đồng, sân bay.</span>
+                </div>
+              </div>
+            </div>
 
-        <div class="trust-grid">
-          <div class="trust-item">Tư vấn rõ ràng, dễ hiểu, không vòng vo.</div>
-          <div class="trust-item">Báo giá minh bạch theo từng khu vực.</div>
-          <div class="trust-item">Hỗ trợ so sánh xe theo đúng nhu cầu.</div>
-          <div class="trust-item">Đồng hành từ lúc chọn xe đến khi nhận xe.</div>
+            <div class="address-box">
+              <strong>📍 Địa chỉ tư vấn:</strong><br>
+              Toà CT5 MHDI Đường Lê Đức Thọ, Phường Từ Liêm, Hà Nội
+            </div>
+          </section>
+
+          <section class="section-card">
+            <div class="section-title">
+              <div class="eyebrow">SẢN PHẨM NỔI BẬT</div>
+              <h2>Chọn xe theo nhu cầu của bạn</h2>
+            </div>
+
+            <div class="quick-products">
+              <div class="quick-card">
+                <img class="quick-thumb" src="vf5.jpg" alt="VinFast VF 5">
+                <div>
+                  <strong>VF 5</strong>
+                  <p>Nhỏ gọn, dễ đi phố, phù hợp gia đình trẻ và khách mua xe lần đầu.</p>
+                </div>
+              </div>
+
+              <div class="quick-card">
+                <img class="quick-thumb" src="limo.jpg" alt="VinFast Limo Green">
+                <div>
+                  <strong>Limo Green</strong>
+                  <p>MPV điện 7 chỗ, phù hợp chạy dịch vụ, hợp đồng, sân bay.</p>
+                </div>
+              </div>
+
+              <div class="quick-card">
+                <img class="quick-thumb" src="vf8.jpg" alt="VinFast VF 8">
+                <div>
+                  <strong>VF 8</strong>
+                  <p>SUV điện rộng rãi, sang trọng, phù hợp gia đình và công việc.</p>
+                </div>
+              </div>
+            </div>
+
+            <button class="full-btn" onclick="openProducts()">Xem chi tiết từng mẫu xe</button>
+          </section>
         </div>
+
+        <div>
+          <section class="section-card" id="leadFormBox">
+            <div class="section-title">
+              <div class="eyebrow">NHẬN BÁO GIÁ NHANH</div>
+              <h2>Để lại thông tin tư vấn</h2>
+              <p>
+                Điền thông tin, hệ thống sẽ mở Zalo để gửi nội dung cho tư vấn viên.
+              </p>
+            </div>
+
+            <form class="lead-form" onsubmit="sendLead(event)">
+              <div class="form-group">
+                <label for="name">Họ và tên</label>
+                <input id="name" type="text" placeholder="Ví dụ: Nguyễn Văn A" required>
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Số điện thoại</label>
+                <input id="phone" type="tel" inputmode="tel" placeholder="Ví dụ: 09xx.xxx.xxx" required>
+              </div>
+
+              <div class="form-group">
+                <label for="car">Mẫu xe quan tâm</label>
+                <select id="car" required>
+                  <option value="">Chọn mẫu xe</option>
+                  <option value="VinFast VF 5">VinFast VF 5</option>
+                  <option value="VinFast Limo Green">VinFast Limo Green</option>
+                  <option value="VinFast VF 8">VinFast VF 8</option>
+                  <option value="Mẫu xe khác">Mẫu xe khác</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="area">Khu vực đăng ký</label>
+                <input id="area" type="text" placeholder="Ví dụ: Hà Nội, Bắc Ninh, Hưng Yên...">
+              </div>
+
+              <button class="submit-btn" type="submit">Gửi thông tin qua Zalo</button>
+
+              <p class="form-note">
+                Cam kết tư vấn rõ ràng, không làm phiền khi khách chưa có nhu cầu.
+              </p>
+            </form>
+          </section>
+
+          <section class="section-card">
+            <div class="section-title">
+              <div class="eyebrow">UY TÍN - TẬN TÂM</div>
+              <h2>Vì sao nên liên hệ tôi?</h2>
+            </div>
+
+            <div class="trust-grid">
+              <div class="trust-item">
+                <b>01</b>
+                <span>Tư vấn thật, rõ nhu cầu, không nói vòng vo.</span>
+              </div>
+
+              <div class="trust-item">
+                <b>02</b>
+                <span>Báo giá minh bạch theo từng khu vực.</span>
+              </div>
+
+              <div class="trust-item">
+                <b>03</b>
+                <span>Hỗ trợ so sánh xe theo tài chính thực tế.</span>
+              </div>
+
+              <div class="trust-item">
+                <b>04</b>
+                <span>Đồng hành từ lúc chọn xe đến khi nhận xe.</span>
+              </div>
+            </div>
+          </section>
+        </div>
+
       </div>
+    </section>
 
-    </div>
-  </section>
-
+  </main>
 
   <!-- TRANG SẢN PHẨM -->
-  <section id="products" class="screen products-page">
+  <main id="products" class="screen products-page">
 
-    <div class="topbar">
-      <button class="back-btn" onclick="openHome()">← Quay lại</button>
-      <div class="brand-small">Lê Mạnh VinFast</div>
+    <div class="product-topbar">
+      <div class="topbar-inner">
+        <button class="back-btn" onclick="openHome()">← Quay lại</button>
+
+        <div class="topbar-title">
+          <strong>Lê Mạnh VinFast</strong>
+          <span>Danh sách sản phẩm</span>
+        </div>
+      </div>
     </div>
 
-    <div class="page-title">
-      <h2>Sản phẩm VinFast nổi bật</h2>
+    <section class="product-head">
+      <div class="label-gold">🚘 Sản phẩm VinFast nổi bật</div>
+      <h2>Chọn mẫu xe bạn quan tâm</h2>
       <p>
-        Chọn mẫu xe bạn quan tâm để xem thông tin, nhận tư vấn trả góp
-        và báo giá lăn bánh mới nhất.
+        Xem nhanh thông tin từng mẫu xe, sau đó bấm nhận giá để được tư vấn lăn bánh,
+        trả góp và ưu đãi mới nhất.
       </p>
-    </div>
+    </section>
 
-    <div class="product-grid">
+    <section class="product-grid" id="productGrid"></section>
 
-      <div class="car-card">
-        <img class="car-photo" src="vf5.jpg" alt="VinFast VF 5">
-        <span class="tag">Xe đô thị</span>
-        <h3>VinFast VF 5</h3>
-        <p>
-          Xe điện nhỏ gọn, dễ đi phố, phù hợp gia đình trẻ,
-          cá nhân đi làm và khách hàng mua xe lần đầu.
-        </p>
-        <div class="price">Liên hệ nhận giá tốt</div>
+    <section id="detailBox" class="detail-box"></section>
 
-        <div class="card-actions">
-          <button class="detail-btn" onclick="showDetail('vf5')">Xem chi tiết VF 5</button>
-          <button class="price-btn" onclick="quickLead('VinFast VF 5')">Nhận giá VF 5</button>
-        </div>
-      </div>
+  </main>
 
-      <div class="car-card">
-        <img class="car-photo" src="limo.jpg" alt="VinFast Limo Green">
-        <span class="tag">7 chỗ chạy dịch vụ</span>
-        <h3>Limo Green</h3>
-        <p>
-          MPV điện 7 chỗ rộng rãi, phù hợp chạy dịch vụ,
-          hợp đồng, sân bay và gia đình đông người.
-        </p>
-        <div class="price">Ưu đãi theo tháng</div>
+  <!-- NÚT GỌI NỔI -->
+  <a class="float-phone" href="tel:0357893451" aria-label="Gọi ngay">☎</a>
 
-        <div class="card-actions">
-          <button class="detail-btn" onclick="showDetail('limo')">Xem chi tiết Limo Green</button>
-          <button class="price-btn" onclick="quickLead('VinFast Limo Green')">Nhận giá Limo Green</button>
-        </div>
-      </div>
-
-      <div class="car-card">
-        <img class="car-photo" src="vf8.jpg" alt="VinFast VF 8">
-        <span class="tag">SUV gia đình</span>
-        <h3>VinFast VF 8</h3>
-        <p>
-          SUV điện rộng rãi, hiện đại, sang trọng,
-          phù hợp gia đình, công việc và di chuyển đường dài.
-        </p>
-        <div class="price">Tư vấn lăn bánh</div>
-
-        <div class="card-actions">
-          <button class="detail-btn" onclick="showDetail('vf8')">Xem chi tiết VF 8</button>
-          <button class="price-btn" onclick="quickLead('VinFast VF 8')">Nhận giá VF 8</button>
-        </div>
-      </div>
-
-    </div>
-
-    <div id="detailBox" class="detail-box"></div>
-
-  </section>
-
-
-  <!-- THANH LIÊN HỆ CỐ ĐỊNH -->
+  <!-- THANH LIÊN HỆ CỐ ĐỊNH MOBILE -->
   <div class="sticky-contact">
     <a class="sticky-call" href="tel:0357893451">Gọi ngay</a>
-    <a class="sticky-zalo" href="https://zalo.me/0357893451" target="_blank">Zalo</a>
+    <a class="sticky-zalo" href="https://zalo.me/0357893451" target="_blank" rel="noopener">Zalo</a>
     <button class="sticky-product" onclick="openProducts()">Sản phẩm</button>
   </div>
-
 
   <script>
     const SALE_PHONE = "0357893451";
     const SALE_ZALO = "https://zalo.me/0357893451";
 
+    const cars = [
+      {
+        id: "vf5",
+        name: "VinFast VF 5",
+        image: "vf5.jpg",
+        tag: "Xe đô thị",
+        price: "Liên hệ nhận giá tốt",
+        short: "Xe điện nhỏ gọn, dễ đi phố, phù hợp gia đình trẻ, cá nhân đi làm và khách mua xe lần đầu.",
+        points: [
+          "Thiết kế gọn, dễ xoay xở trong đô thị",
+          "Chi phí sử dụng tiết kiệm",
+          "Phù hợp đi làm, đi phố, gia đình nhỏ"
+        ],
+        detail: [
+          "Phù hợp khách hàng mua xe lần đầu, gia đình nhỏ hoặc cá nhân đi làm hằng ngày.",
+          "Kích thước nhỏ gọn giúp di chuyển linh hoạt trong phố, dễ gửi xe và dễ sử dụng.",
+          "Chi phí vận hành tiết kiệm, phù hợp người cần một chiếc xe thực dụng.",
+          "Hỗ trợ tư vấn trả góp, báo giá lăn bánh và chính sách mới nhất."
+        ]
+      },
+      {
+        id: "limo",
+        name: "Limo Green",
+        image: "limo.jpg",
+        tag: "MPV điện 7 chỗ",
+        price: "Ưu đãi theo tháng",
+        short: "MPV điện 7 chỗ rộng rãi, phù hợp chạy dịch vụ, hợp đồng, sân bay và gia đình đông người.",
+        points: [
+          "Không gian 7 chỗ thực dụng",
+          "Phù hợp chạy dịch vụ, hợp đồng, sân bay",
+          "Tư vấn phương án tài chính theo nhu cầu"
+        ],
+        detail: [
+          "MPV điện 7 chỗ, không gian rộng rãi, phù hợp nhiều mục đích sử dụng.",
+          "Phù hợp khách chạy dịch vụ, đưa đón sân bay, hợp đồng, khách công ty hoặc gia đình đông người.",
+          "Lợi thế chi phí vận hành xe điện giúp tối ưu khi sử dụng thường xuyên.",
+          "Hỗ trợ tư vấn trả góp, chi phí lăn bánh và ưu đãi theo từng thời điểm."
+        ]
+      },
+      {
+        id: "vf8",
+        name: "VinFast VF 8",
+        image: "vf8.jpg",
+        tag: "SUV gia đình",
+        price: "Tư vấn lăn bánh",
+        short: "SUV điện rộng rãi, hiện đại, sang trọng, phù hợp gia đình, công việc và di chuyển đường dài.",
+        points: [
+          "Không gian rộng rãi, hiện đại",
+          "Phù hợp gia đình và công việc",
+          "Nhiều công nghệ hỗ trợ người lái"
+        ],
+        detail: [
+          "SUV điện rộng rãi, thiết kế hiện đại, phù hợp khách hàng cần một chiếc xe cao cấp hơn.",
+          "Phù hợp gia đình, công việc, tiếp khách hoặc di chuyển đường dài.",
+          "Trang bị nhiều công nghệ hỗ trợ người lái, mang lại trải nghiệm sử dụng tiện nghi.",
+          "Tư vấn giá lăn bánh, trả góp và ưu đãi mới nhất theo khu vực."
+        ]
+      }
+    ];
+
     function openProducts() {
       document.getElementById("home").classList.remove("active");
       document.getElementById("products").classList.add("active");
-      window.scrollTo(0, 0);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      renderProducts();
     }
 
     function openHome() {
       document.getElementById("products").classList.remove("active");
       document.getElementById("home").classList.add("active");
-      window.scrollTo(0, 0);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
-    function showDetail(car) {
+    function renderProducts() {
+      const grid = document.getElementById("productGrid");
+
+      if (grid.dataset.rendered === "true") return;
+
+      grid.innerHTML = cars.map(car => `
+        <article class="car-card">
+          <img class="car-img" src="${car.image}" alt="${car.name}">
+
+          <div class="car-body">
+            <span class="car-tag">${car.tag}</span>
+            <h3>${car.name}</h3>
+            <p>${car.short}</p>
+            <div class="car-price">${car.price}</div>
+
+            <div class="car-points">
+              ${car.points.map(point => `<span>${point}</span>`).join("")}
+            </div>
+
+            <div class="card-actions">
+              <button class="detail-btn" onclick="showDetail('${car.id}')">Xem chi tiết</button>
+              <button class="price-btn" onclick="quickLead('${car.name}')">Nhận giá</button>
+            </div>
+          </div>
+        </article>
+      `).join("");
+
+      grid.dataset.rendered = "true";
+    }
+
+    function showDetail(carId) {
+      const car = cars.find(item => item.id === carId);
       const box = document.getElementById("detailBox");
+
+      if (!car) return;
+
       box.classList.add("active");
+      box.innerHTML = `
+        <h3>${car.name}</h3>
+        <ul>
+          ${car.detail.map(item => `<li>${item}</li>`).join("")}
+        </ul>
 
-      if (car === "vf5") {
-        box.innerHTML = `
-          <h3>VinFast VF 5</h3>
-          <ul>
-            <li>Phù hợp đi phố, gia đình nhỏ, khách hàng mua xe lần đầu.</li>
-            <li>Thiết kế nhỏ gọn, hiện đại, dễ di chuyển trong đô thị.</li>
-            <li>Chi phí sử dụng tiết kiệm, phù hợp nhu cầu đi lại hằng ngày.</li>
-            <li>Hỗ trợ tư vấn trả góp, báo giá lăn bánh và chính sách mới nhất.</li>
-          </ul>
-          <div class="bottom-actions">
-            <a class="bottom-call" href="tel:${SALE_PHONE}">Gọi tư vấn VF 5</a>
-            <a class="bottom-zalo" href="${SALE_ZALO}" target="_blank">Nhắn Zalo</a>
-          </div>
-        `;
-      }
+        <div class="detail-actions">
+          <a class="detail-call" href="tel:${SALE_PHONE}">Gọi tư vấn</a>
+          <a class="detail-zalo" href="${SALE_ZALO}" target="_blank" rel="noopener">Nhắn Zalo</a>
+        </div>
+      `;
 
-      if (car === "limo") {
-        box.innerHTML = `
-          <h3>VinFast Limo Green</h3>
-          <ul>
-            <li>MPV điện 7 chỗ, không gian rộng rãi và thực dụng.</li>
-            <li>Phù hợp chạy dịch vụ, hợp đồng, sân bay, đưa đón khách.</li>
-            <li>Phù hợp gia đình đông người cần xe rộng và tiết kiệm.</li>
-            <li>Hỗ trợ tư vấn phương án tài chính, trả góp và ưu đãi theo tháng.</li>
-          </ul>
-          <div class="bottom-actions">
-            <a class="bottom-call" href="tel:${SALE_PHONE}">Gọi tư vấn Limo Green</a>
-            <a class="bottom-zalo" href="${SALE_ZALO}" target="_blank">Nhắn Zalo</a>
-          </div>
-        `;
-      }
-
-      if (car === "vf8") {
-        box.innerHTML = `
-          <h3>VinFast VF 8</h3>
-          <ul>
-            <li>SUV điện rộng rãi, hiện đại và sang trọng.</li>
-            <li>Phù hợp gia đình, công việc, tiếp khách và di chuyển đường dài.</li>
-            <li>Thiết kế cao cấp, nhiều công nghệ hỗ trợ người lái.</li>
-            <li>Tư vấn giá lăn bánh, trả góp và ưu đãi mới nhất.</li>
-          </ul>
-          <div class="bottom-actions">
-            <a class="bottom-call" href="tel:${SALE_PHONE}">Gọi tư vấn VF 8</a>
-            <a class="bottom-zalo" href="${SALE_ZALO}" target="_blank">Nhắn Zalo</a>
-          </div>
-        `;
-      }
-
-      box.scrollIntoView({ behavior: "smooth" });
-    }
-
-    function sendLead(event) {
-      event.preventDefault();
-
-      const name = document.getElementById("name").value;
-      const phone = document.getElementById("phone").value;
-      const car = document.getElementById("car").value;
-      const area = document.getElementById("area").value || "Chưa nhập";
-
-      const message =
-        `Xin chào anh Mạnh, tôi muốn nhận báo giá VinFast.%0A` +
-        `Họ tên: ${name}%0A` +
-        `Số điện thoại: ${phone}%0A` +
-        `Xe quan tâm: ${car}%0A` +
-        `Khu vực: ${area}`;
-
-      alert("Cảm ơn anh/chị. Web sẽ mở Zalo để gửi thông tin tư vấn.");
-      window.open(`${SALE_ZALO}?text=${message}`, "_blank");
+      setTimeout(() => {
+        box.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 80);
     }
 
     function quickLead(carName) {
       openHome();
 
       setTimeout(() => {
-        document.getElementById("leadFormBox").scrollIntoView({ behavior: "smooth" });
-        document.getElementById("car").value = carName;
-      }, 200);
+        const formBox = document.getElementById("leadFormBox");
+        const carSelect = document.getElementById("car");
+
+        if (carSelect) {
+          carSelect.value = carName;
+        }
+
+        if (formBox) {
+          formBox.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 250);
     }
+
+    function sendLead(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const car = document.getElementById("car").value;
+      const area = document.getElementById("area").value.trim() || "Chưa nhập";
+
+      if (!name || !phone || !car) {
+        alert("Anh/chị vui lòng nhập đủ họ tên, số điện thoại và mẫu xe quan tâm.");
+        return;
+      }
+
+      const message =
+        `Xin chào anh Mạnh, tôi muốn nhận báo giá VinFast.\n` +
+        `Họ tên: ${name}\n` +
+        `Số điện thoại: ${phone}\n` +
+        `Xe quan tâm: ${car}\n` +
+        `Khu vực: ${area}`;
+
+      const zaloLink = `${SALE_ZALO}?text=${encodeURIComponent(message)}`;
+
+      alert("Cảm ơn anh/chị. Web sẽ mở Zalo để gửi thông tin tư vấn.");
+      window.open(zaloLink, "_blank");
+    }
+
+    renderProducts();
   </script>
 
 </body>
