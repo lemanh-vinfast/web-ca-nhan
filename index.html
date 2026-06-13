@@ -4,7 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Lê Mạnh VinFast - Tư vấn xe chính hãng</title>
+  <title>Lê Mạnh VinFast - Tư vấn mua xe VinFast chính hãng</title>
+
+  <meta name="description" content="Tư vấn mua xe VinFast chính hãng, báo giá lăn bánh, hỗ trợ trả góp, cập nhật ưu đãi VinFast mới nhất theo tháng.">
+  <meta name="keywords" content="VinFast, VF5, Limo Green, VF8, tư vấn VinFast, mua xe VinFast trả góp, báo giá VinFast">
+  <meta name="author" content="Lê Mạnh VinFast">
 
   <style>
     * {
@@ -19,10 +23,13 @@
     }
 
     body {
-      min-height: 100vh;
+      background: #050505;
       color: #fff;
-      background: #030303;
       overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
     }
 
     .screen {
@@ -34,18 +41,15 @@
       display: block;
     }
 
-    /* ================= TRANG CHÍNH ================= */
-
     .home {
       min-height: 100vh;
       background:
-        linear-gradient(rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.92)),
+        linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.93)),
         url("background.jpg");
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
+      padding: 28px 16px 110px;
       position: relative;
-      padding: 36px 18px 60px;
     }
 
     .home::before {
@@ -53,37 +57,53 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at top center, rgba(255, 215, 120, 0.20), transparent 35%),
+        radial-gradient(circle at top center, rgba(255, 211, 107, 0.22), transparent 35%),
         radial-gradient(circle at bottom center, rgba(180, 0, 0, 0.25), transparent 42%),
         linear-gradient(90deg, rgba(0,0,0,0.55), transparent 35%, rgba(0,0,0,0.55));
       pointer-events: none;
     }
 
-    .main-box {
+    .container {
+      width: 100%;
+      max-width: 1180px;
+      margin: auto;
       position: relative;
       z-index: 2;
-      width: 100%;
-      max-width: 580px;
+    }
+
+    .hero {
+      max-width: 610px;
       margin: auto;
       text-align: center;
-      padding-top: 42px;
+      padding-top: 30px;
     }
 
     .avatar {
-      width: 118px;
-      height: 118px;
+      width: 122px;
+      height: 122px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid rgba(255, 255, 255, 0.82);
+      border: 3px solid rgba(255,255,255,0.88);
       box-shadow:
-        0 0 0 7px rgba(255,255,255,0.08),
-        0 0 40px rgba(255, 202, 85, 0.45);
-      margin-bottom: 24px;
+        0 0 0 8px rgba(255,255,255,0.08),
+        0 0 45px rgba(255, 207, 96, 0.48);
       background: #111;
+      margin-bottom: 24px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 9px 16px;
+      border-radius: 999px;
+      color: #ffd36b;
+      background: rgba(255, 211, 107, 0.13);
+      border: 1px solid rgba(255, 211, 107, 0.32);
+      font-weight: 700;
+      margin-bottom: 16px;
     }
 
     h1 {
-      font-size: 48px;
+      font-size: 46px;
       line-height: 1.1;
       font-weight: 900;
       margin-bottom: 14px;
@@ -91,44 +111,43 @@
       letter-spacing: -1px;
     }
 
-    .sub {
-      color: rgba(255,255,255,0.78);
+    .hero-desc {
+      color: rgba(255,255,255,0.82);
       font-size: 17px;
-      line-height: 1.65;
-      margin-bottom: 32px;
-      text-shadow: 0 4px 16px rgba(0,0,0,0.7);
+      line-height: 1.7;
+      margin-bottom: 26px;
+      text-shadow: 0 5px 18px rgba(0,0,0,0.75);
     }
 
     .contact-card {
-      background: rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
       border: 1px solid rgba(255,255,255,0.28);
-      border-radius: 28px;
-      padding: 24px;
-      margin-bottom: 24px;
+      border-radius: 30px;
+      padding: 22px;
       box-shadow:
-        0 35px 95px rgba(0,0,0,0.62),
-        inset 0 1px 0 rgba(255,255,255,0.18);
+        0 35px 95px rgba(0,0,0,0.65),
+        inset 0 1px 0 rgba(255,255,255,0.16);
+      margin-bottom: 22px;
     }
 
     .big-btn {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      text-decoration: none;
-      color: #fff;
+      justify-content: space-between;
       min-height: 68px;
-      border-radius: 18px;
-      padding: 0 26px;
-      margin-bottom: 15px;
-      font-size: 22px;
+      border-radius: 19px;
+      padding: 0 24px;
+      margin-bottom: 14px;
+      color: white;
+      font-size: 21px;
       font-weight: 900;
       border: 1px solid rgba(255,255,255,0.45);
-      transition: 0.25s;
       box-shadow:
-        inset 0 1px 8px rgba(255,255,255,0.22),
-        0 12px 28px rgba(0,0,0,0.25);
+        inset 0 1px 8px rgba(255,255,255,0.20),
+        0 12px 28px rgba(0,0,0,0.28);
+      transition: 0.25s;
       cursor: pointer;
     }
 
@@ -143,83 +162,85 @@
         0 20px 42px rgba(0,0,0,0.45);
     }
 
-    .big-btn .icon {
-      font-size: 30px;
-      font-weight: 900;
+    .big-btn small {
+      display: block;
+      font-size: 12px;
+      color: rgba(255,255,255,0.72);
+      font-weight: 600;
+      margin-top: 3px;
+    }
+
+    .icon {
+      font-size: 28px;
     }
 
     .call {
-      background: linear-gradient(135deg, #e60000, #750000 60%, #2a0000);
+      background: linear-gradient(135deg, #f00000, #8d0000 60%, #2a0000);
     }
 
-    .fanpage,
-    .facebook {
-      background: linear-gradient(135deg, rgba(255,255,255,0.26), rgba(255,255,255,0.06));
+    .zalo {
+      background: linear-gradient(135deg, #0068ff, #00a2ff);
     }
 
     .product {
       background: linear-gradient(135deg, #f0c45a, #9b6508 60%, #402400);
-      color: #fff;
     }
 
-    .mini-icons {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      margin: 26px 0 30px;
+    .facebook,
+    .fanpage {
+      background: linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.06));
     }
 
-    .mini-icons a {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
+    .mini-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 11px;
+      margin-bottom: 22px;
+    }
+
+    .mini-btn {
+      padding: 13px 10px;
+      border-radius: 16px;
+      background: rgba(0,0,0,0.42);
+      border: 1px solid rgba(255,255,255,0.22);
       color: white;
-      text-decoration: none;
-      border: 2px solid rgba(255,255,255,0.88);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-weight: 900;
-      font-size: 22px;
-      background: rgba(0,0,0,0.38);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
+      font-weight: 800;
+      font-size: 14px;
       transition: 0.25s;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.35);
     }
 
-    .mini-icons a:hover {
-      transform: scale(1.08);
-      background: rgba(255,255,255,0.18);
+    .mini-btn:hover {
+      background: rgba(255,255,255,0.15);
+      transform: translateY(-2px);
     }
 
-    .policy-box {
-      background: rgba(0,0,0,0.62);
+    .section-box {
+      background: rgba(0,0,0,0.63);
       border: 1px solid rgba(255, 211, 107, 0.42);
-      border-radius: 26px;
+      border-radius: 28px;
       padding: 26px;
+      margin-top: 22px;
       text-align: left;
-      box-shadow: 0 24px 70px rgba(0,0,0,0.5);
+      box-shadow: 0 24px 70px rgba(0,0,0,0.52);
     }
 
-    .policy-box h2 {
-      text-align: center;
+    .section-box h2 {
       color: #ffd36b;
-      font-size: 31px;
+      text-align: center;
+      font-size: 30px;
       margin-bottom: 18px;
-      text-shadow: 0 4px 16px rgba(0,0,0,0.7);
     }
 
-    .policy-box ul {
-      padding-left: 22px;
-      color: rgba(255,255,255,0.92);
+    .section-box ul {
+      padding-left: 21px;
       line-height: 1.9;
+      color: rgba(255,255,255,0.92);
       font-size: 16px;
     }
 
     .address {
-      margin-top: 20px;
-      padding: 17px;
+      margin-top: 18px;
+      padding: 16px;
       border-radius: 18px;
       background: rgba(255,255,255,0.09);
       border: 1px solid rgba(255,255,255,0.18);
@@ -231,33 +252,117 @@
       color: #ffd36b;
     }
 
-    /* ================= TRANG SẢN PHẨM ================= */
+    .quick-products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .quick-card {
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 20px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .quick-card strong {
+      display: block;
+      color: #ffd36b;
+      margin-bottom: 6px;
+      font-size: 17px;
+    }
+
+    .quick-card p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.5;
+    }
+
+    .lead-form {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .lead-form input,
+    .lead-form select {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,0.22);
+      background: rgba(255,255,255,0.1);
+      color: white;
+      border-radius: 16px;
+      padding: 15px;
+      font-size: 15px;
+      outline: none;
+    }
+
+    .lead-form input::placeholder {
+      color: rgba(255,255,255,0.62);
+    }
+
+    .lead-form select option {
+      color: #111;
+    }
+
+    .submit-btn {
+      border: none;
+      padding: 16px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #f0c45a, #9b6508);
+      color: #111;
+      font-weight: 900;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.25s;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 35px rgba(0,0,0,0.35);
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .trust-item {
+      background: rgba(255,255,255,0.09);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 18px;
+      padding: 15px;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.5;
+      font-size: 14px;
+    }
 
     .products-page {
       min-height: 100vh;
       background:
         radial-gradient(circle at top left, rgba(255, 211, 107, 0.18), transparent 34%),
-        radial-gradient(circle at bottom right, rgba(170, 0, 0, 0.18), transparent 36%),
+        radial-gradient(circle at bottom right, rgba(170, 0, 0, 0.20), transparent 36%),
         linear-gradient(135deg, #030303, #121212 55%, #030303);
-      padding: 28px 18px 60px;
+      padding: 26px 16px 110px;
     }
 
-    .wrap {
-      max-width: 1180px;
-      margin: auto;
-    }
-
-    .top {
+    .topbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 32px;
+      margin-bottom: 30px;
+      max-width: 1180px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    .back {
+    .back-btn {
       border: 1px solid rgba(255,255,255,0.25);
       background: rgba(255,255,255,0.10);
-      color: #fff;
+      color: white;
       border-radius: 15px;
       padding: 13px 18px;
       font-weight: 900;
@@ -265,7 +370,7 @@
       transition: 0.25s;
     }
 
-    .back:hover {
+    .back-btn:hover {
       background: rgba(255,255,255,0.18);
       transform: translateY(-2px);
     }
@@ -275,23 +380,26 @@
       font-weight: 900;
     }
 
-    .title {
+    .page-title {
+      max-width: 760px;
+      margin: 0 auto 34px;
       text-align: center;
-      margin-bottom: 36px;
     }
 
-    .title h2 {
-      font-size: 44px;
+    .page-title h2 {
+      font-size: 42px;
       margin-bottom: 10px;
     }
 
-    .title p {
+    .page-title p {
       color: rgba(255,255,255,0.72);
+      line-height: 1.7;
       font-size: 17px;
-      line-height: 1.6;
     }
 
-    .grid {
+    .product-grid {
+      max-width: 1180px;
+      margin: auto;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
@@ -301,7 +409,7 @@
       background: rgba(255,255,255,0.09);
       border: 1px solid rgba(255,255,255,0.18);
       border-radius: 30px;
-      padding: 24px;
+      padding: 22px;
       box-shadow: 0 26px 75px rgba(0,0,0,0.48);
       transition: 0.25s;
       overflow: hidden;
@@ -311,12 +419,12 @@
     .car-card::before {
       content: "";
       position: absolute;
-      width: 160px;
-      height: 160px;
+      width: 170px;
+      height: 170px;
       border-radius: 50%;
-      background: rgba(255, 211, 107, 0.12);
-      top: -70px;
-      right: -70px;
+      background: rgba(255, 211, 107, 0.13);
+      top: -75px;
+      right: -75px;
     }
 
     .car-card:hover {
@@ -324,24 +432,36 @@
       background: rgba(255,255,255,0.13);
     }
 
-    .car-img {
-      height: 150px;
+    .car-photo {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
       border-radius: 23px;
-      background:
-        linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.05));
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 68px;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       border: 1px solid rgba(255,255,255,0.14);
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.22), rgba(255,255,255,0.05));
       position: relative;
       z-index: 2;
     }
 
     .car-card h3 {
       font-size: 27px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 7px 11px;
+      border-radius: 999px;
+      color: #ffd36b;
+      background: rgba(255, 211, 107, 0.12);
+      border: 1px solid rgba(255, 211, 107, 0.24);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 13px;
       position: relative;
       z-index: 2;
     }
@@ -358,34 +478,51 @@
       color: #ffd36b;
       font-size: 19px;
       font-weight: 900;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
       position: relative;
       z-index: 2;
     }
 
-    .detail-btn {
+    .card-actions {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .detail-btn,
+    .price-btn {
       width: 100%;
       border: none;
       padding: 15px;
       border-radius: 16px;
-      background: linear-gradient(135deg, #f0c45a, #8c5a05);
-      color: #121212;
       font-weight: 900;
       cursor: pointer;
-      font-size: 16px;
+      font-size: 15px;
       transition: 0.25s;
-      position: relative;
-      z-index: 2;
     }
 
-    .detail-btn:hover {
+    .detail-btn {
+      background: linear-gradient(135deg, #f0c45a, #8c5a05);
+      color: #111;
+    }
+
+    .price-btn {
+      background: linear-gradient(135deg, #e60000, #650000);
+      color: white;
+    }
+
+    .detail-btn:hover,
+    .price-btn:hover {
       transform: translateY(-2px);
       box-shadow: 0 14px 28px rgba(0,0,0,0.35);
     }
 
-    .detail {
+    .detail-box {
       display: none;
-      margin-top: 32px;
+      max-width: 1180px;
+      margin: 30px auto 0;
       background: rgba(255,255,255,0.09);
       border: 1px solid rgba(255,255,255,0.18);
       border-radius: 28px;
@@ -393,21 +530,21 @@
       box-shadow: 0 26px 75px rgba(0,0,0,0.45);
     }
 
-    .detail.active {
+    .detail-box.active {
       display: block;
     }
 
-    .detail h3 {
+    .detail-box h3 {
       font-size: 31px;
       color: #ffd36b;
-      margin-bottom: 15px;
+      margin-bottom: 14px;
     }
 
-    .detail ul {
+    .detail-box ul {
       padding-left: 22px;
       line-height: 2;
       color: rgba(255,255,255,0.9);
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
 
     .bottom-actions {
@@ -419,7 +556,6 @@
     .bottom-call,
     .bottom-zalo {
       display: inline-block;
-      text-decoration: none;
       color: white;
       padding: 15px 24px;
       border-radius: 16px;
@@ -434,61 +570,94 @@
       background: linear-gradient(135deg, #0068ff, #00a2ff);
     }
 
-    .note {
-      text-align: center;
-      color: rgba(255,255,255,0.55);
-      font-size: 14px;
-      margin-top: 34px;
-      line-height: 1.6;
+    .sticky-contact {
+      position: fixed;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      z-index: 99;
+      max-width: 650px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.2fr;
+      gap: 8px;
+      background: rgba(0,0,0,0.68);
+      border: 1px solid rgba(255,255,255,0.16);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-radius: 22px;
+      padding: 9px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.55);
     }
 
-    /* ================= MOBILE ================= */
+    .sticky-contact a,
+    .sticky-contact button {
+      border: none;
+      border-radius: 16px;
+      padding: 13px 8px;
+      color: white;
+      font-weight: 900;
+      font-size: 13px;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .sticky-call {
+      background: linear-gradient(135deg, #e60000, #650000);
+    }
+
+    .sticky-zalo {
+      background: linear-gradient(135deg, #0068ff, #00a2ff);
+    }
+
+    .sticky-product {
+      background: linear-gradient(135deg, #f0c45a, #8c5a05);
+      color: #111 !important;
+    }
 
     @media (max-width: 900px) {
-      .home {
-        padding-top: 26px;
-      }
-
-      .main-box {
-        padding-top: 24px;
-      }
-
       h1 {
         font-size: 38px;
       }
 
-      .sub {
-        font-size: 16px;
+      .hero {
+        padding-top: 22px;
       }
 
       .contact-card {
         padding: 18px;
-        border-radius: 24px;
+        border-radius: 25px;
       }
 
       .big-btn {
         min-height: 64px;
-        font-size: 20px;
-        padding: 0 22px;
+        font-size: 19px;
+        padding: 0 20px;
       }
 
-      .policy-box {
-        padding: 22px;
-      }
-
-      .policy-box h2 {
-        font-size: 27px;
-      }
-
-      .grid {
+      .mini-row {
         grid-template-columns: 1fr;
       }
 
-      .title h2 {
-        font-size: 35px;
+      .quick-products,
+      .trust-grid,
+      .product-grid {
+        grid-template-columns: 1fr;
       }
 
-      .top {
+      .section-box {
+        padding: 22px;
+      }
+
+      .section-box h2 {
+        font-size: 26px;
+      }
+
+      .page-title h2 {
+        font-size: 34px;
+      }
+
+      .topbar {
         gap: 14px;
       }
     }
@@ -497,57 +666,66 @@
 
 <body>
 
-  <!-- ================= TRANG CHÍNH ================= -->
+  <!-- TRANG CHÍNH -->
   <section id="home" class="screen active home">
-    <div class="main-box">
+    <div class="container">
 
-      <img src="avatar.jpg" class="avatar" alt="Ảnh cá nhân">
+      <div class="hero">
+        <img src="avatar.jpg" class="avatar" alt="Lê Mạnh VinFast">
 
-      <h1>Lê Mạnh VinFast</h1>
+        <div class="badge">Tư vấn VinFast chính hãng</div>
 
-      <p class="sub">
-        Tư vấn VinFast chính hãng · Giao xe toàn quốc · Hỗ trợ khách hàng 24/7
-      </p>
+        <h1>Lê Mạnh VinFast</h1>
 
-      <div class="contact-card">
+        <p class="hero-desc">
+          Nhận báo giá lăn bánh, ưu đãi trả góp và chính sách VinFast mới nhất trong tháng.
+          Hỗ trợ khách hàng mua xe gia đình, chạy dịch vụ và kinh doanh hợp đồng.
+        </p>
 
-        <a class="big-btn call" href="tel:0988888888">
-          <span>Gọi Ngay</span>
-          <span class="icon">☎</span>
-        </a>
+        <div class="contact-card">
 
-        <a class="big-btn fanpage" href="https://facebook.com/" target="_blank">
-          <span>Fanpage</span>
-          <span class="icon">👥</span>
-        </a>
+          <a class="big-btn call" href="tel:0988888888">
+            <span>
+              Gọi ngay nhận báo giá
+              <small>Tư vấn nhanh, rõ ràng, minh bạch</small>
+            </span>
+            <span class="icon">☎</span>
+          </a>
 
-        <a class="big-btn facebook" href="https://facebook.com/" target="_blank">
-          <span>Facebook</span>
-          <span class="icon">f</span>
-        </a>
+          <a class="big-btn zalo" href="https://zalo.me/0988888888" target="_blank">
+            <span>
+              Nhắn Zalo tư vấn nhanh
+              <small>Gửi mẫu xe quan tâm để nhận giá</small>
+            </span>
+            <span class="icon">Z</span>
+          </a>
 
-        <a class="big-btn product" href="#" onclick="openProducts(); return false;">
-          <span>Sản Phẩm</span>
-          <span class="icon">🚘</span>
-        </a>
+          <a class="big-btn product" href="#" onclick="openProducts(); return false;">
+            <span>
+              Xem sản phẩm VinFast
+              <small>VF 5 · Limo Green · VF 8</small>
+            </span>
+            <span class="icon">🚘</span>
+          </a>
 
+        </div>
+
+        <div class="mini-row">
+          <a class="mini-btn" href="https://facebook.com/" target="_blank">Facebook</a>
+          <a class="mini-btn" href="https://facebook.com/" target="_blank">Fanpage</a>
+          <a class="mini-btn" href="sms:0988888888">Nhắn tin SMS</a>
+        </div>
       </div>
 
-      <div class="mini-icons">
-        <a href="sms:0988888888" title="Nhắn tin">💬</a>
-        <a href="https://zalo.me/0988888888" target="_blank" title="Zalo">Z</a>
-        <a href="https://tiktok.com/" target="_blank" title="TikTok">♪</a>
-      </div>
-
-      <div class="policy-box">
-        <h2>500+ khách hàng đã tin tưởng</h2>
+      <div class="section-box">
+        <h2>🔥 Ưu đãi VinFast tháng này</h2>
 
         <ul>
-          <li>Tư vấn chọn xe phù hợp nhu cầu và tài chính.</li>
-          <li>Báo giá lăn bánh nhanh, rõ ràng, minh bạch.</li>
-          <li>Hỗ trợ trả góp lên đến 85% giá trị xe.</li>
-          <li>Cập nhật chính sách ưu đãi VinFast theo từng tháng.</li>
-          <li>Hỗ trợ khách mua xe gia đình, chạy dịch vụ, hợp đồng.</li>
+          <li>Hỗ trợ tư vấn trả góp lên đến 85% giá trị xe.</li>
+          <li>Cập nhật chính sách ưu đãi mới nhất theo từng mẫu xe.</li>
+          <li>Báo giá lăn bánh nhanh theo tỉnh/thành.</li>
+          <li>Tư vấn phương án tài chính phù hợp với nhu cầu thực tế.</li>
+          <li>Hỗ trợ khách mua xe gia đình, chạy dịch vụ, hợp đồng, sân bay.</li>
         </ul>
 
         <div class="address">
@@ -556,70 +734,154 @@
         </div>
       </div>
 
+      <div class="section-box">
+        <h2>🚘 Sản phẩm nổi bật</h2>
+
+        <div class="quick-products">
+          <div class="quick-card">
+            <strong>VF 5</strong>
+            <p>Phù hợp đi phố, gia đình nhỏ, mua xe lần đầu.</p>
+          </div>
+
+          <div class="quick-card">
+            <strong>Limo Green</strong>
+            <p>Phù hợp chạy dịch vụ, hợp đồng, sân bay.</p>
+          </div>
+
+          <div class="quick-card">
+            <strong>VF 8</strong>
+            <p>SUV điện rộng rãi, sang trọng, phù hợp gia đình.</p>
+          </div>
+        </div>
+
+        <br>
+
+        <button class="submit-btn" onclick="openProducts()">Xem tất cả sản phẩm</button>
+      </div>
+
+      <div class="section-box" id="leadFormBox">
+        <h2>📩 Nhận báo giá nhanh</h2>
+
+        <form class="lead-form" onsubmit="sendLead(event)">
+          <input id="name" type="text" placeholder="Họ và tên của bạn" required>
+          <input id="phone" type="tel" placeholder="Số điện thoại" required>
+
+          <select id="car" required>
+            <option value="">Chọn mẫu xe quan tâm</option>
+            <option value="VinFast VF 5">VinFast VF 5</option>
+            <option value="VinFast Limo Green">VinFast Limo Green</option>
+            <option value="VinFast VF 8">VinFast VF 8</option>
+            <option value="Mẫu xe khác">Mẫu xe khác</option>
+          </select>
+
+          <input id="area" type="text" placeholder="Khu vực của bạn, ví dụ: Hà Nội">
+
+          <button class="submit-btn" type="submit">
+            Nhận báo giá lăn bánh trong 5 phút
+          </button>
+        </form>
+      </div>
+
+      <div class="section-box">
+        <h2>✅ Vì sao nên liên hệ tôi?</h2>
+
+        <div class="trust-grid">
+          <div class="trust-item">Tư vấn rõ ràng, dễ hiểu, không vòng vo.</div>
+          <div class="trust-item">Báo giá minh bạch theo từng khu vực.</div>
+          <div class="trust-item">Hỗ trợ so sánh xe theo đúng nhu cầu.</div>
+          <div class="trust-item">Đồng hành từ lúc chọn xe đến khi nhận xe.</div>
+        </div>
+      </div>
+
     </div>
   </section>
 
 
-  <!-- ================= TRANG SẢN PHẨM ================= -->
+  <!-- TRANG SẢN PHẨM -->
   <section id="products" class="screen products-page">
-    <div class="wrap">
 
-      <div class="top">
-        <button class="back" onclick="openHome()">← Quay lại</button>
-        <div class="brand-small">Lê Mạnh VinFast</div>
-      </div>
+    <div class="topbar">
+      <button class="back-btn" onclick="openHome()">← Quay lại</button>
+      <div class="brand-small">Lê Mạnh VinFast</div>
+    </div>
 
-      <div class="title">
-        <h2>Sản phẩm nổi bật</h2>
-        <p>Chọn mẫu xe bạn quan tâm để xem chi tiết và nhận báo giá nhanh.</p>
-      </div>
-
-      <div class="grid">
-
-        <div class="car-card">
-          <div class="car-img">🚙</div>
-          <h3>VinFast VF 5</h3>
-          <p>
-            Xe điện nhỏ gọn, dễ đi phố, phù hợp gia đình trẻ và khách mua xe lần đầu.
-          </p>
-          <div class="price">Liên hệ nhận giá tốt</div>
-          <button class="detail-btn" onclick="showDetail('vf5')">Xem chi tiết</button>
-        </div>
-
-        <div class="car-card">
-          <div class="car-img">🚐</div>
-          <h3>Limo Green</h3>
-          <p>
-            MPV điện 7 chỗ rộng rãi, phù hợp chạy dịch vụ, hợp đồng, sân bay.
-          </p>
-          <div class="price">Ưu đãi theo tháng</div>
-          <button class="detail-btn" onclick="showDetail('limo')">Xem chi tiết</button>
-        </div>
-
-        <div class="car-card">
-          <div class="car-img">🚘</div>
-          <h3>VinFast VF 8</h3>
-          <p>
-            SUV điện hiện đại, sang trọng, phù hợp gia đình, công việc và đi xa.
-          </p>
-          <div class="price">Tư vấn lăn bánh</div>
-          <button class="detail-btn" onclick="showDetail('vf8')">Xem chi tiết</button>
-        </div>
-
-      </div>
-
-      <div id="detailBox" class="detail"></div>
-
-      <p class="note">
-        Thông tin giá và chính sách có thể thay đổi theo từng thời điểm.
-        Vui lòng liên hệ trực tiếp để nhận báo giá mới nhất.
+    <div class="page-title">
+      <h2>Sản phẩm VinFast nổi bật</h2>
+      <p>
+        Chọn mẫu xe bạn quan tâm để xem thông tin, nhận tư vấn trả góp
+        và báo giá lăn bánh mới nhất.
       </p>
+    </div>
+
+    <div class="product-grid">
+
+      <div class="car-card">
+        <img class="car-photo" src="vf5.jpg" alt="VinFast VF 5">
+        <span class="tag">Xe đô thị</span>
+        <h3>VinFast VF 5</h3>
+        <p>
+          Xe điện nhỏ gọn, dễ đi phố, phù hợp gia đình trẻ,
+          cá nhân đi làm và khách hàng mua xe lần đầu.
+        </p>
+        <div class="price">Liên hệ nhận giá tốt</div>
+
+        <div class="card-actions">
+          <button class="detail-btn" onclick="showDetail('vf5')">Xem chi tiết VF 5</button>
+          <button class="price-btn" onclick="quickLead('VinFast VF 5')">Nhận giá VF 5</button>
+        </div>
+      </div>
+
+      <div class="car-card">
+        <img class="car-photo" src="limo.jpg" alt="VinFast Limo Green">
+        <span class="tag">7 chỗ chạy dịch vụ</span>
+        <h3>Limo Green</h3>
+        <p>
+          MPV điện 7 chỗ rộng rãi, phù hợp chạy dịch vụ,
+          hợp đồng, sân bay và gia đình đông người.
+        </p>
+        <div class="price">Ưu đãi theo tháng</div>
+
+        <div class="card-actions">
+          <button class="detail-btn" onclick="showDetail('limo')">Xem chi tiết Limo Green</button>
+          <button class="price-btn" onclick="quickLead('VinFast Limo Green')">Nhận giá Limo Green</button>
+        </div>
+      </div>
+
+      <div class="car-card">
+        <img class="car-photo" src="vf8.jpg" alt="VinFast VF 8">
+        <span class="tag">SUV gia đình</span>
+        <h3>VinFast VF 8</h3>
+        <p>
+          SUV điện rộng rãi, hiện đại, sang trọng,
+          phù hợp gia đình, công việc và di chuyển đường dài.
+        </p>
+        <div class="price">Tư vấn lăn bánh</div>
+
+        <div class="card-actions">
+          <button class="detail-btn" onclick="showDetail('vf8')">Xem chi tiết VF 8</button>
+          <button class="price-btn" onclick="quickLead('VinFast VF 8')">Nhận giá VF 8</button>
+        </div>
+      </div>
 
     </div>
+
+    <div id="detailBox" class="detail-box"></div>
+
   </section>
+
+
+  <!-- THANH LIÊN HỆ CỐ ĐỊNH -->
+  <div class="sticky-contact">
+    <a class="sticky-call" href="tel:0988888888">Gọi ngay</a>
+    <a class="sticky-zalo" href="https://zalo.me/0988888888" target="_blank">Zalo</a>
+    <button class="sticky-product" onclick="openProducts()">Sản phẩm</button>
+  </div>
 
 
   <script>
+    const SALE_PHONE = "0988888888";
+    const SALE_ZALO = "https://zalo.me/0988888888";
+
     function openProducts() {
       document.getElementById("home").classList.remove("active");
       document.getElementById("products").classList.add("active");
@@ -640,14 +902,14 @@
         box.innerHTML = `
           <h3>VinFast VF 5</h3>
           <ul>
-            <li>Thiết kế nhỏ gọn, hiện đại, dễ di chuyển trong phố.</li>
-            <li>Phù hợp gia đình trẻ, cá nhân đi làm, khách mua xe lần đầu.</li>
-            <li>Chi phí vận hành tiết kiệm, sử dụng linh hoạt hằng ngày.</li>
-            <li>Hỗ trợ tư vấn trả góp và báo giá lăn bánh nhanh.</li>
+            <li>Phù hợp đi phố, gia đình nhỏ, khách hàng mua xe lần đầu.</li>
+            <li>Thiết kế nhỏ gọn, hiện đại, dễ di chuyển trong đô thị.</li>
+            <li>Chi phí sử dụng tiết kiệm, phù hợp nhu cầu đi lại hằng ngày.</li>
+            <li>Hỗ trợ tư vấn trả góp, báo giá lăn bánh và chính sách mới nhất.</li>
           </ul>
           <div class="bottom-actions">
-            <a class="bottom-call" href="tel:0988888888">Gọi tư vấn VF 5</a>
-            <a class="bottom-zalo" href="https://zalo.me/0988888888" target="_blank">Nhắn Zalo</a>
+            <a class="bottom-call" href="tel:${SALE_PHONE}">Gọi tư vấn VF 5</a>
+            <a class="bottom-zalo" href="${SALE_ZALO}" target="_blank">Nhắn Zalo</a>
           </div>
         `;
       }
@@ -656,14 +918,14 @@
         box.innerHTML = `
           <h3>VinFast Limo Green</h3>
           <ul>
-            <li>MPV điện 7 chỗ, không gian rộng rãi, thực dụng.</li>
+            <li>MPV điện 7 chỗ, không gian rộng rãi và thực dụng.</li>
             <li>Phù hợp chạy dịch vụ, hợp đồng, sân bay, đưa đón khách.</li>
             <li>Phù hợp gia đình đông người cần xe rộng và tiết kiệm.</li>
-            <li>Hỗ trợ tư vấn phương án tài chính và chính sách hàng tháng.</li>
+            <li>Hỗ trợ tư vấn phương án tài chính, trả góp và ưu đãi theo tháng.</li>
           </ul>
           <div class="bottom-actions">
-            <a class="bottom-call" href="tel:0988888888">Gọi tư vấn Limo Green</a>
-            <a class="bottom-zalo" href="https://zalo.me/0988888888" target="_blank">Nhắn Zalo</a>
+            <a class="bottom-call" href="tel:${SALE_PHONE}">Gọi tư vấn Limo Green</a>
+            <a class="bottom-zalo" href="${SALE_ZALO}" target="_blank">Nhắn Zalo</a>
           </div>
         `;
       }
@@ -673,18 +935,46 @@
           <h3>VinFast VF 8</h3>
           <ul>
             <li>SUV điện rộng rãi, hiện đại và sang trọng.</li>
-            <li>Phù hợp gia đình, đi làm, đi xa và tiếp khách.</li>
-            <li>Thiết kế cao cấp, nhiều công nghệ hỗ trợ.</li>
+            <li>Phù hợp gia đình, công việc, tiếp khách và di chuyển đường dài.</li>
+            <li>Thiết kế cao cấp, nhiều công nghệ hỗ trợ người lái.</li>
             <li>Tư vấn giá lăn bánh, trả góp và ưu đãi mới nhất.</li>
           </ul>
           <div class="bottom-actions">
-            <a class="bottom-call" href="tel:0988888888">Gọi tư vấn VF 8</a>
-            <a class="bottom-zalo" href="https://zalo.me/0988888888" target="_blank">Nhắn Zalo</a>
+            <a class="bottom-call" href="tel:${SALE_PHONE}">Gọi tư vấn VF 8</a>
+            <a class="bottom-zalo" href="${SALE_ZALO}" target="_blank">Nhắn Zalo</a>
           </div>
         `;
       }
 
       box.scrollIntoView({ behavior: "smooth" });
+    }
+
+    function sendLead(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
+      const car = document.getElementById("car").value;
+      const area = document.getElementById("area").value || "Chưa nhập";
+
+      const message =
+        `Xin chào anh Mạnh, tôi muốn nhận báo giá VinFast.%0A` +
+        `Họ tên: ${name}%0A` +
+        `Số điện thoại: ${phone}%0A` +
+        `Xe quan tâm: ${car}%0A` +
+        `Khu vực: ${area}`;
+
+      alert("Cảm ơn anh/chị. Web sẽ mở Zalo để gửi thông tin tư vấn.");
+      window.open(`${SALE_ZALO}?text=${message}`, "_blank");
+    }
+
+    function quickLead(carName) {
+      openHome();
+
+      setTimeout(() => {
+        document.getElementById("leadFormBox").scrollIntoView({ behavior: "smooth" });
+        document.getElementById("car").value = carName;
+      }, 200);
     }
   </script>
 
