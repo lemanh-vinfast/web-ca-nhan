@@ -20,16 +20,13 @@
       --black: #020204;
       --glass: rgba(255, 255, 255, 0.075);
       --glass-2: rgba(255, 255, 255, 0.115);
-      --glass-3: rgba(255, 255, 255, 0.16);
-      --dark-glass: rgba(0, 0, 0, 0.24);
+      --dark-glass: rgba(0, 0, 0, 0.26);
       --line: rgba(255, 255, 255, 0.14);
       --gold-line: rgba(255, 214, 111, 0.34);
       --gold: #ffd76f;
-      --gold-soft: #ffe9a9;
+      --gold-soft: #fff0bd;
       --gold-dark: #9a5d08;
-      --gold-deep: #5b3303;
       --red: #d90812;
-      --red-deep: #560004;
       --blue: #087bff;
       --green: #0ed684;
       --white: #ffffff;
@@ -79,10 +76,10 @@
       inset: 0;
       z-index: -4;
       background:
-        radial-gradient(circle at 50% 0%, rgba(255, 215, 111, 0.18), transparent 34%),
+        radial-gradient(circle at 50% 0%, rgba(255, 215, 111, 0.2), transparent 34%),
         radial-gradient(circle at 8% 38%, rgba(255, 175, 48, 0.12), transparent 22%),
         radial-gradient(circle at 88% 20%, rgba(255, 215, 111, 0.1), transparent 24%),
-        linear-gradient(180deg, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.72) 58%, rgba(0, 0, 0, 0.88));
+        linear-gradient(180deg, rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.74) 58%, rgba(0, 0, 0, 0.9));
       pointer-events: none;
     }
 
@@ -109,7 +106,7 @@
     .screen {
       display: none;
       min-height: 100svh;
-      padding-bottom: 106px;
+      padding-bottom: 112px;
     }
 
     .screen.active {
@@ -699,6 +696,234 @@
       line-height: 1.6;
     }
 
+
+    .mega-policy {
+      position: relative;
+      z-index: 2;
+      padding: 16px;
+      border-radius: 26px;
+      margin-bottom: 14px;
+      background:
+        linear-gradient(135deg, rgba(255, 215, 111, 0.18), rgba(255, 255, 255, 0.05)),
+        rgba(0, 0, 0, 0.18);
+      border: 1px solid rgba(255, 215, 111, 0.34);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.16),
+        0 18px 42px rgba(255, 215, 111, 0.12);
+    }
+
+    .mega-policy-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .mega-policy-top strong {
+      display: block;
+      color: #fff7d7;
+      font-size: 18px;
+      line-height: 1.18;
+      letter-spacing: -0.25px;
+    }
+
+    .mega-policy-top span {
+      display: block;
+      margin-top: 4px;
+      color: rgba(255,255,255,0.7);
+      font-size: 12.5px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .mega-badge {
+      flex: 0 0 auto;
+      min-width: 78px;
+      min-height: 78px;
+      border-radius: 24px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: #150e03;
+      font-weight: 1000;
+      background: linear-gradient(135deg, #fff5cf, #ffd76f 42%, #b8730f);
+      box-shadow:
+        0 16px 36px rgba(255, 215, 111, 0.22),
+        inset 0 1px 0 rgba(255,255,255,0.55);
+    }
+
+    .mega-badge small {
+      display: block;
+      font-size: 11px;
+      line-height: 1.05;
+    }
+
+    .mega-badge b {
+      display: block;
+      font-size: 22px;
+      line-height: 1.05;
+    }
+
+    .deal-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .deal-card {
+      min-height: 108px;
+      padding: 13px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255, 215, 111, 0.18);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .deal-card.hot {
+      background:
+        linear-gradient(135deg, rgba(255, 215, 111, 0.13), rgba(255,255,255,0.05)),
+        rgba(0,0,0,0.12);
+      border-color: rgba(255, 215, 111, 0.34);
+    }
+
+    .deal-number {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 2px;
+      margin-bottom: 7px;
+      background: linear-gradient(135deg, #fff9db, var(--gold), #a76508);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-weight: 1000;
+    }
+
+    .deal-number b {
+      font-size: 25px;
+      line-height: 1;
+    }
+
+    .deal-number small {
+      font-size: 13px;
+      font-weight: 1000;
+    }
+
+    .deal-card strong {
+      display: block;
+      font-size: 13.5px;
+      color: #fff7db;
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+
+    .deal-card span {
+      display: block;
+      font-size: 12.5px;
+      color: rgba(255,255,255,0.68);
+      line-height: 1.42;
+      font-weight: 700;
+    }
+
+    .policy-note {
+      position: relative;
+      z-index: 2;
+      margin-top: 12px;
+      padding: 12px 13px;
+      border-radius: 20px;
+      background: rgba(14, 214, 132, 0.09);
+      border: 1px solid rgba(14, 214, 132, 0.22);
+      color: rgba(255,255,255,0.78);
+      font-size: 13px;
+      line-height: 1.5;
+      font-weight: 800;
+    }
+
+    .price-highlight {
+      margin-top: 8px;
+      padding: 12px;
+      border-radius: 19px;
+      background:
+        linear-gradient(135deg, rgba(255, 215, 111, 0.12), rgba(255,255,255,0.04)),
+        rgba(0,0,0,0.16);
+      border: 1px solid rgba(255, 215, 111, 0.22);
+    }
+
+    .price-highlight .old-price {
+      display: block;
+      color: rgba(255,255,255,0.55);
+      font-size: 12.5px;
+      font-weight: 900;
+      text-decoration: line-through;
+      margin-bottom: 4px;
+    }
+
+    .price-highlight .new-price {
+      display: block;
+      color: var(--gold);
+      font-size: 20px;
+      line-height: 1.12;
+      font-weight: 1000;
+      text-shadow: 0 0 18px rgba(255, 215, 111, 0.18);
+    }
+
+    .price-highlight .save-price {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 8px;
+      min-height: 28px;
+      padding: 0 10px;
+      border-radius: 999px;
+      background: rgba(217, 8, 18, 0.18);
+      border: 1px solid rgba(255, 215, 111, 0.2);
+      color: #fff0bd;
+      font-size: 12.5px;
+      font-weight: 1000;
+    }
+
+    .car-price-box {
+      margin: 12px 0;
+      padding: 13px;
+      border-radius: 20px;
+      background:
+        linear-gradient(135deg, rgba(255, 215, 111, 0.14), rgba(255,255,255,0.04)),
+        rgba(0,0,0,0.16);
+      border: 1px solid rgba(255, 215, 111, 0.24);
+    }
+
+    .car-price-box .old-price {
+      display: block;
+      color: rgba(255,255,255,0.52);
+      text-decoration: line-through;
+      font-size: 12.5px;
+      font-weight: 900;
+      margin-bottom: 5px;
+    }
+
+    .car-price-box .new-price {
+      display: block;
+      color: var(--gold);
+      font-size: 20px;
+      line-height: 1.15;
+      font-weight: 1000;
+    }
+
+    .car-price-box .save-price {
+      display: inline-flex;
+      margin-top: 8px;
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: rgba(217, 8, 18, 0.18);
+      color: #fff0bd;
+      font-size: 12px;
+      font-weight: 1000;
+      border: 1px solid rgba(255, 215, 111, 0.18);
+    }
+
     .policy-list {
       position: relative;
       z-index: 2;
@@ -809,6 +1034,7 @@
       color: var(--muted);
       font-size: 13.5px;
       line-height: 1.45;
+      margin-top: 3px;
     }
 
     .full-btn {
@@ -1297,7 +1523,235 @@
         padding: 27px;
       }
 
-      .policy-list {
+  
+    .mega-policy {
+      position: relative;
+      z-index: 2;
+      padding: 16px;
+      border-radius: 26px;
+      margin-bottom: 14px;
+      background:
+        linear-gradient(135deg, rgba(255, 215, 111, 0.18), rgba(255, 255, 255, 0.05)),
+        rgba(0, 0, 0, 0.18);
+      border: 1px solid rgba(255, 215, 111, 0.34);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.16),
+        0 18px 42px rgba(255, 215, 111, 0.12);
+    }
+
+    .mega-policy-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .mega-policy-top strong {
+      display: block;
+      color: #fff7d7;
+      font-size: 18px;
+      line-height: 1.18;
+      letter-spacing: -0.25px;
+    }
+
+    .mega-policy-top span {
+      display: block;
+      margin-top: 4px;
+      color: rgba(255,255,255,0.7);
+      font-size: 12.5px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .mega-badge {
+      flex: 0 0 auto;
+      min-width: 78px;
+      min-height: 78px;
+      border-radius: 24px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: #150e03;
+      font-weight: 1000;
+      background: linear-gradient(135deg, #fff5cf, #ffd76f 42%, #b8730f);
+      box-shadow:
+        0 16px 36px rgba(255, 215, 111, 0.22),
+        inset 0 1px 0 rgba(255,255,255,0.55);
+    }
+
+    .mega-badge small {
+      display: block;
+      font-size: 11px;
+      line-height: 1.05;
+    }
+
+    .mega-badge b {
+      display: block;
+      font-size: 22px;
+      line-height: 1.05;
+    }
+
+    .deal-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .deal-card {
+      min-height: 108px;
+      padding: 13px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255, 215, 111, 0.18);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    .deal-card.hot {
+      background:
+        linear-gradient(135deg, rgba(255, 215, 111, 0.13), rgba(255,255,255,0.05)),
+        rgba(0,0,0,0.12);
+      border-color: rgba(255, 215, 111, 0.34);
+    }
+
+    .deal-number {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 2px;
+      margin-bottom: 7px;
+      background: linear-gradient(135deg, #fff9db, var(--gold), #a76508);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-weight: 1000;
+    }
+
+    .deal-number b {
+      font-size: 25px;
+      line-height: 1;
+    }
+
+    .deal-number small {
+      font-size: 13px;
+      font-weight: 1000;
+    }
+
+    .deal-card strong {
+      display: block;
+      font-size: 13.5px;
+      color: #fff7db;
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+
+    .deal-card span {
+      display: block;
+      font-size: 12.5px;
+      color: rgba(255,255,255,0.68);
+      line-height: 1.42;
+      font-weight: 700;
+    }
+
+    .policy-note {
+      position: relative;
+      z-index: 2;
+      margin-top: 12px;
+      padding: 12px 13px;
+      border-radius: 20px;
+      background: rgba(14, 214, 132, 0.09);
+      border: 1px solid rgba(14, 214, 132, 0.22);
+      color: rgba(255,255,255,0.78);
+      font-size: 13px;
+      line-height: 1.5;
+      font-weight: 800;
+    }
+
+    .price-highlight {
+      margin-top: 8px;
+      padding: 12px;
+      border-radius: 19px;
+      background:
+        linear-gradient(135deg, rgba(255, 215, 111, 0.12), rgba(255,255,255,0.04)),
+        rgba(0,0,0,0.16);
+      border: 1px solid rgba(255, 215, 111, 0.22);
+    }
+
+    .price-highlight .old-price {
+      display: block;
+      color: rgba(255,255,255,0.55);
+      font-size: 12.5px;
+      font-weight: 900;
+      text-decoration: line-through;
+      margin-bottom: 4px;
+    }
+
+    .price-highlight .new-price {
+      display: block;
+      color: var(--gold);
+      font-size: 20px;
+      line-height: 1.12;
+      font-weight: 1000;
+      text-shadow: 0 0 18px rgba(255, 215, 111, 0.18);
+    }
+
+    .price-highlight .save-price {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 8px;
+      min-height: 28px;
+      padding: 0 10px;
+      border-radius: 999px;
+      background: rgba(217, 8, 18, 0.18);
+      border: 1px solid rgba(255, 215, 111, 0.2);
+      color: #fff0bd;
+      font-size: 12.5px;
+      font-weight: 1000;
+    }
+
+    .car-price-box {
+      margin: 12px 0;
+      padding: 13px;
+      border-radius: 20px;
+      background:
+        linear-gradient(135deg, rgba(255, 215, 111, 0.14), rgba(255,255,255,0.04)),
+        rgba(0,0,0,0.16);
+      border: 1px solid rgba(255, 215, 111, 0.24);
+    }
+
+    .car-price-box .old-price {
+      display: block;
+      color: rgba(255,255,255,0.52);
+      text-decoration: line-through;
+      font-size: 12.5px;
+      font-weight: 900;
+      margin-bottom: 5px;
+    }
+
+    .car-price-box .new-price {
+      display: block;
+      color: var(--gold);
+      font-size: 20px;
+      line-height: 1.15;
+      font-weight: 1000;
+    }
+
+    .car-price-box .save-price {
+      display: inline-flex;
+      margin-top: 8px;
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: rgba(217, 8, 18, 0.18);
+      color: #fff0bd;
+      font-size: 12px;
+      font-weight: 1000;
+      border: 1px solid rgba(255, 215, 111, 0.18);
+    }
+
+    .policy-list {
         grid-template-columns: repeat(2, 1fr);
       }
 
@@ -1342,7 +1796,8 @@
         width: min(100% - 20px, 1140px);
       }
 
-      .highlight-strip {
+      .highlight-strip,
+      .deal-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1358,12 +1813,12 @@
 
 <body>
 
-  <div class="gold-aurora">
+  <div class="gold-aurora" aria-hidden="true">
     <span></span>
     <span></span>
     <span></span>
   </div>
-  <div class="gold-lines"></div>
+  <div class="gold-lines" aria-hidden="true"></div>
 
   <main id="home" class="screen active">
 
@@ -1386,7 +1841,7 @@
               <img src="avatar.jpg" class="avatar" alt="Lê Mạnh VinFast">
             </div>
 
-            <div class="label-gold"> Tư vấn bán hàng VinFast</div>
+            <div class="label-gold">Tư vấn bán hàng VinFast</div>
 
             <h1><span class="gold-text">Lê Mạnh VinFast</span></h1>
 
@@ -1437,7 +1892,7 @@
                 <span class="btn-icon">Z</span>
               </a>
 
-              <button class="big-btn product-btn" onclick="openProducts()">
+              <button class="big-btn product-btn" type="button" onclick="openProducts()">
                 <span>
                   <strong>Xem sản phẩm VinFast</strong>
                   <small>VF 5 · Limo Green · VF 8</small>
@@ -1471,60 +1926,74 @@
               </p>
             </div>
 
+            <div class="mega-policy">
+              <div class="mega-policy-top">
+                <div>
+                  <strong>Combo ưu đãi tháng 6 cho khách chốt xe sớm</strong>
+                  <span>Tập trung vào giảm giá thật, hỗ trợ tài chính và tối ưu chi phí lăn bánh.</span>
+                </div>
+
+                <div class="mega-badge">
+                  <span>
+                    <small>TỐI ĐA</small>
+                    <b>85%</b>
+                    <small>TRẢ GÓP</small>
+                  </span>
+                </div>
+              </div>
+
+              <div class="deal-grid">
+                <div class="deal-card hot">
+                  <div class="deal-number"><b>3</b><small>%</small></div>
+                  <strong>Mùa hè rực rỡ</strong>
+                  <span>Ưu đãi thêm khi mua xe trong tháng 6.</span>
+                </div>
+
+                <div class="deal-card hot">
+                  <div class="deal-number"><b>6</b><small>%</small></div>
+                  <strong>Mãnh liệt vì tương lai xanh</strong>
+                  <span>Áp dụng cho các dòng xe theo chính sách hiện hành.</span>
+                </div>
+
+                <div class="deal-card">
+                  <div class="deal-number"><b>5</b><small>%</small></div>
+                  <strong>Công An & Quân Đội</strong>
+                  <span>Ưu đãi riêng cho khách hàng đủ điều kiện.</span>
+                </div>
+
+                <div class="deal-card">
+                  <div class="deal-number"><b>15</b><small>tr</small></div>
+                  <strong>Quy đổi bảo hiểm thân vỏ</strong>
+                  <span>VF 5 & Limo Green có thể quy đổi tiền mặt.</span>
+                </div>
+              </div>
+
+              <div class="policy-note">
+                ✓ Miễn phí 100% phí trước bạ · ✓ Hỗ trợ hồ sơ vay · ✓ Tư vấn giá lăn bánh theo từng khu vực.
+              </div>
+            </div>
+
             <div class="policy-list">
               <div class="policy-item">
                 <div class="check">✓</div>
                 <div>
                   <strong>Hỗ trợ trả góp lên đến 85%</strong>
-                  <span>Tư vấn hồ sơ, dòng tiền và phương án trả trước phù hợp.</span>
+                  <span>Tư vấn phương án trả trước, khoản vay và dòng tiền hàng tháng phù hợp.</span>
                 </div>
               </div>
 
               <div class="policy-item">
                 <div class="check">✓</div>
                 <div>
-                  <strong>Mãnh liệt vì tương lai xanh</strong>
-                  <span>Giảm 8% xe ( VF8,VF9 ) .</span>
-                  <span>Giảm 6% xe ( cho các xe còn lại ) .</span>
-                </div>
-              </div>
-
-              <div class="policy-item">
-                <div class="check">✓</div>
-                <div>
-                  <strong>Công An & Quân Đội</strong>
-                  <span>Giảm 5% cho khách hàng thuộc công an và quân đội.</span>
-                </div>
-              </div>
-
-              <div class="policy-item">
-                <div class="check">✓</div>
-                <div>
-                  <strong>Mùa hè rực rỡ</strong>
-                  <span>Giảm 3% khi mua xe trong tháng 6.</span>
-                </div>
-              </div>
-            </div>
-            <div class="policy-item">
-                <div class="check">✓</div>
-                <div>
-                  <strong>Tặng 2 năm bảo hiểm thân võ</strong>
-                  <span>Đối với xe VF5 & Limo green,có thể quy đổi 15.000.000đ.</span>
-                </div>
-              </div>
-            </div>
-                    <div class="policy-item">
-                <div class="check">✓</div>
-                <div>
-                  <strong>Miễn Phí 100% Phí Trước Bạ</strong>
-                  <span>Hỗ trợ gói đăng kí đăng kiểm không mất phí</span>
+                  <strong>Giá lăn bánh rõ ràng</strong>
+                  <span>Báo giá theo khu vực đăng ký, không nói chung chung, dễ so sánh.</span>
                 </div>
               </div>
             </div>
 
             <div class="address-box">
               <strong>📍 Địa chỉ tư vấn:</strong><br>
-              Vinfast Newway Mỹ Đình Toà CT5 MHDI Đường Lê Đức Thọ, Phường Từ Liêm, Hà Nội
+              VinFast Newway Mỹ Đình, Toà CT5 MHDI, Đường Lê Đức Thọ, Phường Từ Liêm, Hà Nội
             </div>
           </section>
 
@@ -1539,7 +2008,11 @@
                 <img class="quick-thumb" src="vf5.jpg" alt="VinFast VF 5">
                 <div>
                   <strong>VF 5</strong>
-                  <p>Giá Niêm Yết 529.000.000 sau khuyến mại giá chỉ còn 4XX.000.000.</p>
+                  <div class="price-highlight">
+                    <span class="old-price">Niêm yết: 529.000.000đ</span>
+                    <span class="new-price">Sau ưu đãi: chỉ từ 4XX triệu</span>
+                    <span class="save-price">Nhận giá lăn bánh hôm nay</span>
+                  </div>
                   <p>Nhỏ gọn, dễ đi phố, phù hợp gia đình trẻ và khách mua xe lần đầu.</p>
                 </div>
               </div>
@@ -1548,7 +2021,11 @@
                 <img class="quick-thumb" src="limo.jpg" alt="VinFast Limo Green">
                 <div>
                   <strong>Limo Green</strong>
-                  <p>Giá Niêm Yết 749.000.000đ sau khuyến mại giá chỉ còn 6XX.000.000đ.</p>
+                  <div class="price-highlight">
+                    <span class="old-price">Niêm yết: 749.000.000đ</span>
+                    <span class="new-price">Sau ưu đãi: chỉ từ 6XX triệu</span>
+                    <span class="save-price">Tối ưu cho chạy dịch vụ</span>
+                  </div>
                   <p>MPV điện 7 chỗ, phù hợp chạy dịch vụ, hợp đồng, sân bay.</p>
                 </div>
               </div>
@@ -1557,14 +2034,18 @@
                 <img class="quick-thumb" src="vf8.jpg" alt="VinFast VF 8">
                 <div>
                   <strong>VF 8</strong>
-                  <p>Giá Niêm Yết 1.019.000.000đ sau khuyến mại giá chỉ còn 8XX.000.000đ.</p>
+                  <div class="price-highlight">
+                    <span class="old-price">Niêm yết: 1.019.000.000đ</span>
+                    <span class="new-price">Sau ưu đãi: chỉ từ 8XX triệu</span>
+                    <span class="save-price">SUV rộng rãi, sang trọng</span>
+                  </div>
                   <p>SUV điện rộng rãi, sang trọng, phù hợp gia đình và công việc.</p>
                 </div>
               </div>
             </div>
 
-            <button class="full-btn" onclick="openProducts()">Xem chi tiết từng mẫu xe</button>
-  
+            <button class="full-btn" type="button" onclick="openProducts()">Xem chi tiết từng mẫu xe</button>
+          </section>
 
           <section class="section-card glass thin reveal">
             <div class="section-title">
@@ -1596,6 +2077,85 @@
           </section>
         </div>
 
+        <aside>
+          <section id="leadFormBox" class="section-card glass thin reveal">
+            <div class="section-title">
+              <div class="eyebrow">Để lại thông tin</div>
+              <h2>Nhận báo giá lăn bánh</h2>
+              <p>
+                Nhập thông tin, website sẽ mở Zalo để gửi nội dung tư vấn trực tiếp cho Lê Mạnh.
+              </p>
+            </div>
+
+            <form class="lead-form" onsubmit="sendLead(event)">
+              <div class="form-group">
+                <label for="name">Họ và tên</label>
+                <input id="name" type="text" placeholder="Ví dụ: Nguyễn Văn A" autocomplete="name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Số điện thoại</label>
+                <input id="phone" type="tel" placeholder="Ví dụ: 0988.xxx.xxx" autocomplete="tel" required>
+              </div>
+
+              <div class="form-group">
+                <label for="car">Mẫu xe quan tâm</label>
+                <select id="car" required>
+                  <option value="">Chọn mẫu xe</option>
+                  <option value="VinFast VF 5">VinFast VF 5</option>
+                  <option value="Limo Green">Limo Green</option>
+                  <option value="VinFast VF 8">VinFast VF 8</option>
+                  <option value="Chưa rõ, cần tư vấn thêm">Chưa rõ, cần tư vấn thêm</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="area">Khu vực đăng ký</label>
+                <input id="area" type="text" placeholder="Ví dụ: Hà Nội, Bắc Ninh, Hải Phòng...">
+              </div>
+
+              <button class="submit-btn" type="submit">Gửi thông tin qua Zalo</button>
+
+              <p class="form-note">
+                Nếu trình duyệt không tự mở Zalo, anh/chị có thể bấm nút Zalo hoặc gọi trực tiếp 0357.893.451.
+              </p>
+            </form>
+          </section>
+
+          <section class="section-card glass thin reveal">
+            <div class="section-title">
+              <div class="eyebrow">Tư vấn nhanh</div>
+              <h2>Khách hàng thường hỏi</h2>
+            </div>
+
+            <div class="policy-list">
+              <div class="policy-item">
+                <div class="check">?</div>
+                <div>
+                  <strong>Trả trước bao nhiêu là phù hợp?</strong>
+                  <span>Tôi sẽ tính theo mẫu xe, hồ sơ vay và dòng tiền hàng tháng của anh/chị.</span>
+                </div>
+              </div>
+
+              <div class="policy-item">
+                <div class="check">?</div>
+                <div>
+                  <strong>Xe chạy dịch vụ nên chọn mẫu nào?</strong>
+                  <span>Limo Green phù hợp khách cần 7 chỗ, tối ưu chi phí vận hành và chạy thường xuyên.</span>
+                </div>
+              </div>
+
+              <div class="policy-item">
+                <div class="check">?</div>
+                <div>
+                  <strong>Giá lăn bánh có thay đổi không?</strong>
+                  <span>Giá phụ thuộc khu vực đăng ký, chính sách tháng và hồ sơ của từng khách hàng.</span>
+                </div>
+              </div>
+            </div>
+          </section>
+        </aside>
+
       </div>
     </section>
 
@@ -1605,7 +2165,7 @@
 
     <div class="product-topbar">
       <div class="topbar-inner">
-        <button class="back-btn" onclick="openHome()">← Quay lại</button>
+        <button class="back-btn" type="button" onclick="openHome()">← Quay lại</button>
 
         <div class="topbar-title">
           <strong>Lê Mạnh VinFast</strong>
@@ -1634,7 +2194,7 @@
   <div class="sticky-contact">
     <a class="sticky-call" href="tel:0357893451">Gọi ngay</a>
     <a class="sticky-zalo" href="https://zalo.me/0357893451" target="_blank" rel="noopener">Zalo</a>
-    <button class="sticky-product" onclick="openProducts()">Sản phẩm</button>
+    <button class="sticky-product" type="button" onclick="openProducts()">Sản phẩm</button>
   </div>
 
   <script>
@@ -1647,7 +2207,9 @@
         name: "VinFast VF 5",
         image: "vf5.jpg",
         tag: "Xe đô thị",
-        price: "Liên hệ nhận giá tốt",
+        price: "Sau ưu đãi chỉ từ 4XX triệu",
+        oldPrice: "Niêm yết: 529.000.000đ",
+        save: "Giá tốt cho khách chốt tháng 6",
         short: "Xe điện nhỏ gọn, dễ đi phố, phù hợp gia đình trẻ, cá nhân đi làm và khách mua xe lần đầu.",
         points: [
           "Thiết kế gọn, dễ xoay xở trong đô thị",
@@ -1666,7 +2228,9 @@
         name: "Limo Green",
         image: "limo.jpg",
         tag: "MPV điện 7 chỗ",
-        price: "Ưu đãi theo tháng",
+        price: "Sau ưu đãi chỉ từ 6XX triệu",
+        oldPrice: "Niêm yết: 749.000.000đ",
+        save: "Tặng 2 năm bảo hiểm thân vỏ hoặc quy đổi 15 triệu",
         short: "MPV điện 7 chỗ rộng rãi, phù hợp chạy dịch vụ, hợp đồng, sân bay và gia đình đông người.",
         points: [
           "Không gian 7 chỗ thực dụng",
@@ -1685,7 +2249,9 @@
         name: "VinFast VF 8",
         image: "vf8.jpg",
         tag: "SUV gia đình",
-        price: "Tư vấn lăn bánh",
+        price: "Sau ưu đãi chỉ từ 8XX triệu",
+        oldPrice: "Niêm yết: 1.019.000.000đ",
+        save: "Giảm mạnh theo chính sách tháng 6",
         short: "SUV điện rộng rãi, hiện đại, sang trọng, phù hợp gia đình, công việc và di chuyển đường dài.",
         points: [
           "Không gian rộng rãi, hiện đại",
@@ -1704,6 +2270,7 @@
     function openProducts() {
       document.getElementById("home").classList.remove("active");
       document.getElementById("products").classList.add("active");
+      document.getElementById("detailBox").classList.remove("active");
       window.scrollTo({ top: 0, behavior: "smooth" });
       renderProducts();
       revealNow();
@@ -1719,7 +2286,7 @@
     function renderProducts() {
       const grid = document.getElementById("productGrid");
 
-      if (grid.dataset.rendered === "true") return;
+      if (!grid || grid.dataset.rendered === "true") return;
 
       grid.innerHTML = cars.map(car => `
         <article class="car-card glass thin reveal">
@@ -1729,15 +2296,19 @@
             <span class="car-tag">${car.tag}</span>
             <h3>${car.name}</h3>
             <p>${car.short}</p>
-            <div class="car-price">${car.price}</div>
+            <div class="car-price-box">
+              <span class="old-price">${car.oldPrice}</span>
+              <span class="new-price">${car.price}</span>
+              <span class="save-price">${car.save}</span>
+            </div>
 
             <div class="car-points">
               ${car.points.map(point => `<span>${point}</span>`).join("")}
             </div>
 
             <div class="card-actions">
-              <button class="detail-btn" onclick="showDetail('${car.id}')">Xem chi tiết</button>
-              <button class="price-btn" onclick="quickLead('${car.name}')">Nhận giá</button>
+              <button class="detail-btn" type="button" onclick="showDetail('${car.id}')">Xem chi tiết</button>
+              <button class="price-btn" type="button" onclick="quickLead('${car.name}')">Nhận giá</button>
             </div>
           </div>
         </article>
@@ -1750,7 +2321,7 @@
       const car = cars.find(item => item.id === carId);
       const box = document.getElementById("detailBox");
 
-      if (!car) return;
+      if (!car || !box) return;
 
       box.classList.add("active");
       box.innerHTML = `
@@ -1790,13 +2361,24 @@
     function sendLead(event) {
       event.preventDefault();
 
-      const name = document.getElementById("name").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-      const car = document.getElementById("car").value;
-      const area = document.getElementById("area").value.trim() || "Chưa nhập";
+      const nameInput = document.getElementById("name");
+      const phoneInput = document.getElementById("phone");
+      const carSelect = document.getElementById("car");
+      const areaInput = document.getElementById("area");
+
+      const name = nameInput.value.trim();
+      const phone = phoneInput.value.trim();
+      const car = carSelect.value;
+      const area = areaInput.value.trim() || "Chưa nhập";
 
       if (!name || !phone || !car) {
         alert("Anh/chị vui lòng nhập đủ họ tên, số điện thoại và mẫu xe quan tâm.");
+        return;
+      }
+
+      const cleanPhone = phone.replace(/\s+/g, "");
+      if (cleanPhone.length < 9) {
+        alert("Anh/chị vui lòng kiểm tra lại số điện thoại.");
         return;
       }
 
@@ -1807,19 +2389,32 @@
         `Xe quan tâm: ${car}\n` +
         `Khu vực: ${area}`;
 
-      const zaloLink = `${SALE_ZALO}?text=${encodeURIComponent(message)}`;
+      const smsLink = `sms:${SALE_PHONE}?body=${encodeURIComponent(message)}`;
 
-      alert("Cảm ơn anh/chị. Web sẽ mở Zalo để gửi thông tin tư vấn.");
-      window.open(zaloLink, "_blank");
+      alert("Cảm ơn anh/chị. Nếu Zalo không tự chèn nội dung, anh/chị có thể gửi thông tin qua SMS hoặc nhắn Zalo trực tiếp.");
+
+      const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+      if (isMobile) {
+        window.location.href = smsLink;
+      } else {
+        window.open(SALE_ZALO, "_blank");
+      }
     }
 
     function revealNow() {
       const items = document.querySelectorAll(".reveal");
 
+      if (!("IntersectionObserver" in window)) {
+        items.forEach(item => item.classList.add("show"));
+        return;
+      }
+
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add("show");
+            observer.unobserve(entry.target);
           }
         });
       }, {
